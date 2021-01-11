@@ -46,17 +46,112 @@
       -ms-flex-direction: row;
           flex-direction: row;
   width: 70%;
-  height: 40vh;
-  border: 2px solid white;
+  height: 30vh;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
+  background-color: white;
+  padding: 2vh;
+  border-radius: 10px;
+  -webkit-box-shadow: 10px 10px 10px 0 rgba(36, 36, 36, 0.205);
+          box-shadow: 10px 10px 10px 0 rgba(36, 36, 36, 0.205);
 }
 
 .gamePage .wortFeld .holder .char {
-  background-color: #3e3e46;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: #2d0068;
+  border: 2px solid white;
+  width: 10%;
+  font-size: 2vh;
+  font-weight: bold;
+}
+
+.gamePage .wortFeld .holder .charEmpty {
+  background-color: #5c5c5c;
   border: 2px solid white;
   padding: 20px;
   width: 10%;
+}
+
+.gamePage .wortFeld .holder .edge {
+  background-color: white;
+  border: 2px solid white;
+  padding: 20px;
+  width: 10%;
+}
+
+.gamePage .inputs {
+  margin-top: 2vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.gamePage .inputs .plate {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  width: 70%;
+  height: 30vh;
+}
+
+.gamePage .inputs .plate .charBox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  width: 45%;
+  background-color: rgba(255, 255, 255, 0.219);
+  border-radius: 10px;
+}
+
+.gamePage .inputs .plate .charBox * {
+  margin: 0.5vh;
+}
+
+.gamePage .inputs .plate .charBox button {
+  width: 12.5%;
+  height: auto;
+  background-color: #004bbb;
+  border: 0px;
+  border-radius: 10px;
+  color: white;
+  -webkit-transition: all ease 300ms;
+  transition: all ease 300ms;
+}
+
+.gamePage .inputs .plate .charBox button:hover {
+  background-color: #002f75;
 }
 
 .app {
@@ -64,8 +159,8 @@
   left: 0;
   width: 100%;
   height: 100vh;
-  background: #181919;
-  background: radial-gradient(circle, #181919 4%, black 80%);
+  background-image: -webkit-gradient(linear, left bottom, left top, from(#30cfd0), to(#330867));
+  background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%);
   font-family: "Lato", sans-serif;
   display: -webkit-box;
   display: -ms-flexbox;

@@ -1,0 +1,36 @@
+.inputs{
+    margin-top: 2vh;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    .plate{
+        display: flex;
+        flex-direction: row;
+        width: 70%;
+        height: 30vh;
+        .charBox{
+            display: flex;
+            flex-direction: row;
+            flex-wrap: wrap;
+            width: 45%;
+            background-color: rgba(255, 255, 255, 0.219);
+            border-radius: 10px;
+            *{
+                margin: 0.5vh;
+            }
+            button{
+                width: 12.5%;
+                height: auto;
+                background-color: rgb(0, 75, 187);
+                border: 0px;
+                border-radius: 10px;
+                color:white;
+                transition: all ease 300ms;
+                &:hover{
+                    background-color: rgb(0, 47, 117);
+                }
+            }
+        }
+    }
+}

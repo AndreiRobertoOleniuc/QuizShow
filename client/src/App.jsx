@@ -1,5 +1,4 @@
-import React, { useState, useEffect } from 'react'
-import axios from "axios";
+import React from 'react'
 import {
     BrowserRouter as Router,
     Switch,
@@ -9,9 +8,6 @@ import {
 import Game from "./pages/Game";
 import "./pages/style/style.css";
 const App = () => {
-    useEffect(() => {
-
-    }, []);
     return (
         <div className="app">
             <Router>
