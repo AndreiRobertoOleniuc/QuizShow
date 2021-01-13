@@ -6,6 +6,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.ArrayList;
+import java.util.Random;
 
 @RestController
 public class Controller {
@@ -14,14 +15,20 @@ public class Controller {
     public Controller(){
         wörter = new ArrayList<>();
         wort = new ArrayList<>();
-        wörter.add("FC Barcelona");
-        for (char c : wörter.get(0).toCharArray()) {
-            wort.add(new Chars(c,false));
-        }
+        wörter.add("Snowboarding ist cool");
+        wörter.add("Spring Boot");
+        wörter.add("Anakin Skywalker");
+        wörter.add("Python");
+        wörter.add("Javascript");
     }
     @GetMapping("/getWort")
     @CrossOrigin(origins = "http://localhost:3000")
     public ArrayList<Chars> getWortRand(){
+        Random r = new Random();
+        wort = new ArrayList<>();
+        for (char c : wörter.get(r.nextInt(5)).toCharArray()){
+            wort.add(new Chars(c,false));
+        }
         return wort;
     }
 }

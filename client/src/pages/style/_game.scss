@@ -10,5 +10,20 @@
         justify-content: center;
     }
     @import "./grid";
-    @import "./inputs";
+    .controlsAndWheel{
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        .holder{
+            margin-top:2.5vh;
+            display: flex;
+            flex-direction: row;
+            width: 70%;
+            height: 55vh;
+            border-radius: 10px;
+            box-shadow: 10px 10px 10px 0 rgba(36, 36, 36, 0.205);
+            @import "./inputs"; 
+            @import "./wheel";
+        }
+    }
 }

@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import Title from "./components/Title";
 import Grid from "./components/Grid";
 import Inputs from "./components/Inputs";
+import Wheel from "./components/Wheel";
 
 const Game = () => {
     const [input, setInput] = useState(null);
@@ -9,7 +10,12 @@ const Game = () => {
         <div className="gamePage">
             <Title title={"Wheel of Fortune"} />
             <Grid userinput={input} />
-            <Inputs setInput={setInput} />
+            <div className="controlsAndWheel">
+                <div className="holder">
+                    <Inputs setInput={setInput} />
+                    <Wheel />   
+                </div>
+            </div>
         </div>
     )
 }
