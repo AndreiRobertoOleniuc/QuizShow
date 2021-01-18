@@ -1,8 +1,12 @@
 package ch.bbbaden.QuizShow;
 
 import ch.bbbaden.Models.Chars;
+import ch.bbbaden.Models.Spieler;
+import ch.bbbaden.Models.StartGame;
+import ch.bbbaden.Models.Wort;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.ArrayList;
@@ -30,5 +34,14 @@ public class Controller {
             wort.add(new Chars(c,false));
         }
         return wort;
+    }
+    @GetMapping("/startGame")
+    @CrossOrigin(origins = "http://localhost:3000")
+    public StartGame startGame(@RequestParam(value = "name",defaultValue = "0") String name){
+        Spieler player = new Spieler(0,name,3);
+        ArrayList<Chars> chars = getWortRand();
+        Wort wort = new Wort()
+        StartGame newGame = new StartGame()
+        return null;
     }
 }
