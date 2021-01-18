@@ -1,2 +1,10 @@
-package ch.bbbaden.Models;public enum Kategorien {
+package ch.bbbaden.Models;
+
+public enum Kategorien {
+    Sport,
+    Essen,
+    Welt,
+    Musik,
+    Filme,
+    Spiele
 }

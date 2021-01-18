@@ -36,7 +36,7 @@ function Grid({ userinput }) {
         <div className="wortFeld">
             <div className="holder">
                 {items.map((item, id) => {
-                    if (id === 0 || id === 9 || id === 30 || id === 39) {
+                    if (id == 0 || id == 9 || id == 30 || id == 39) {
                         return (
                             <div className="edge" key={id}></div>
                         )

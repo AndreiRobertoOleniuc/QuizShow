@@ -6,6 +6,8 @@ import Wheel from "./components/Wheel";
 
 const Game = () => {
     const [input, setInput] = useState(null);
+    const [prize, setPrize] = useState();
+    const [prizeSet, setPrizeSet] = useState(false);
     return (
         <div className="gamePage">
             <Title title={"Wheel of Fortune"} />
@@ -13,9 +15,14 @@ const Game = () => {
             <div className="controlsAndWheel">
                 <div className="holder">
                     <Inputs setInput={setInput} />
-                    <Wheel />   
+                    <Wheel setPrize={setPrize} setPrizeSet={setPrizeSet} />
                 </div>
             </div>
+            {prizeSet ? (
+                <div id="prizeMsg"><h1>{prize}</h1></div>
+            ) :
+                (null)
+            }
         </div>
     )
 }

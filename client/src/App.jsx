@@ -5,7 +5,6 @@ import {
     Route,
     Redirect,
 } from "react-router-dom";
-import Wheel from './pages/components/Wheel';
 import Game from "./pages/Game";
 import "./pages/style/style.css";
 const App = () => {
@@ -15,9 +14,6 @@ const App = () => {
                 <Switch>
                     <Route exact path="/">
                         <Game />
-                    </Route>
-                    <Route exact path="/Wheel">
-                        <Wheel />
                     </Route>
                     <Redirect to="/" />
                 </Switch>
