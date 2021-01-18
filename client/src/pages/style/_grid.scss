@@ -3,6 +3,19 @@
     display: flex;
     align-items: center;
     justify-content: center;
+    flex-direction:column;
+    .kategorie{
+        display: flex;
+        flex-direction: column;
+        justify-content:center;
+        align-items:center;
+        width: 30%;
+        height: 3vh;
+        background-color: rgba(255, 255, 255, 0.212);
+        padding: 2vh;
+        border-radius: 0px 0px 10px 10px;
+        box-shadow: 10px 10px 10px 0 rgba(36, 36, 36, 0.205);
+    }
     .holder{
         display: flex;
         flex-direction: row;

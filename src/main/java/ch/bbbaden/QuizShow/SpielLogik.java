@@ -13,6 +13,11 @@ public class SpielLogik {
         wort.add(new Wort(Kategorien.Essen,"Prosciutto e Funghi"));
         wort.add(new Wort(Kategorien.Filme,"Spiderman"));
         wort.add(new Wort(Kategorien.Sport,"FIFA Worldcup"));
+        wort.add(new Wort(Kategorien.Wirtschaft,"Apple"));
+        wort.add(new Wort(Kategorien.Gaming,"Switzerland"));
+        wort.add(new Wort(Kategorien.Welt,"Playstation 5"));
+        wort.add(new Wort(Kategorien.Sport,"Champions League"));
+
     }
     public Wort getRandWort(){
         Random r = new Random();

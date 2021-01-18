@@ -6,5 +6,7 @@ public enum Kategorien {
     Welt,
     Musik,
     Filme,
-    Spiele
+    Spiele,
+    Gaming,
+    Wirtschaft,
 }

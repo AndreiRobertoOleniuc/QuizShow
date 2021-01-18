@@ -18,7 +18,7 @@
             *{
                 margin: 0.5vh;
             }
-            button{
+            .working{
                 width: 12.9%;
                 height: auto;
                 background-color: rgb(0, 75, 187);
@@ -29,6 +29,15 @@
                 &:hover{
                     background-color: rgb(0, 47, 117);
                 }
+            }
+            .nonWorking{
+                width: 12.9%;
+                height: auto;
+                background-color: rgba(78, 78, 78, 0.205);
+                border: 0px;
+                border-radius: 10px;
+                color:white;
+                transition: all ease 200ms;
             }
         }
         .spielerInfo{

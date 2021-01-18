@@ -35,6 +35,33 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.gamePage .wortFeld .kategorie {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 30%;
+  height: 3vh;
+  background-color: rgba(255, 255, 255, 0.212);
+  padding: 2vh;
+  border-radius: 0px 0px 10px 10px;
+  -webkit-box-shadow: 10px 10px 10px 0 rgba(36, 36, 36, 0.205);
+          box-shadow: 10px 10px 10px 0 rgba(36, 36, 36, 0.205);
 }
 
 .gamePage .wortFeld .holder {
@@ -113,7 +140,7 @@
       -ms-flex-direction: row;
           flex-direction: row;
   width: 70%;
-  height: 55vh;
+  height: 52vh;
   border-radius: 10px;
   -webkit-box-shadow: 10px 10px 10px 0 rgba(36, 36, 36, 0.205);
           box-shadow: 10px 10px 10px 0 rgba(36, 36, 36, 0.205);
@@ -162,7 +189,7 @@
   margin: 0.5vh;
 }
 
-.gamePage .controlsAndWheel .holder .inputs .plate .charBox button {
+.gamePage .controlsAndWheel .holder .inputs .plate .charBox .working {
   width: 12.9%;
   height: auto;
   background-color: #004bbb;
@@ -173,8 +200,19 @@
   transition: all ease 200ms;
 }
 
-.gamePage .controlsAndWheel .holder .inputs .plate .charBox button:hover {
+.gamePage .controlsAndWheel .holder .inputs .plate .charBox .working:hover {
   background-color: #002f75;
+}
+
+.gamePage .controlsAndWheel .holder .inputs .plate .charBox .nonWorking {
+  width: 12.9%;
+  height: auto;
+  background-color: rgba(78, 78, 78, 0.205);
+  border: 0px;
+  border-radius: 10px;
+  color: white;
+  -webkit-transition: all ease 200ms;
+  transition: all ease 200ms;
 }
 
 .gamePage .controlsAndWheel .holder .inputs .plate .spielerInfo {
@@ -302,8 +340,8 @@
 }
 
 .gamePage .controlsAndWheel .holder .wheel .container .board .spinner-table {
-  height: 328px;
-  width: 328px;
+  height: 308px;
+  width: 308px;
   position: relative;
   border-radius: 100%;
   overflow: hidden;
@@ -350,8 +388,8 @@
 .gamePage .controlsAndWheel .holder .wheel .container .board .spinner-table .dial .slice {
   z-index: 150;
   position: absolute;
-  top: calc(50% - 43.1969px);
-  height: 86.3938px;
+  top: calc(50% - 40.57891px);
+  height: 81.15781px;
   left: 50%;
   width: 50%;
   color: white;
@@ -373,14 +411,14 @@
 .gamePage .controlsAndWheel .holder .wheel .container .board .spinner-table .dial .slice:before {
   margin-bottom: -1px;
   margin-top: -2px;
-  border-width: 0 0 47.1969px 165px;
+  border-width: 0 0 44.57891px 155px;
   border-color: transparent transparent #095B8D transparent;
 }
 
 .gamePage .controlsAndWheel .holder .wheel .container .board .spinner-table .dial .slice:after {
   margin-top: -1px;
   margin-bottom: -2px;
-  border-width: 0 165px 47.1969px 0;
+  border-width: 0 155px 44.57891px 0;
   border-color: transparent #095B8D transparent transparent;
 }
 
@@ -397,7 +435,7 @@
   top: 0;
   bottom: 0;
   width: 70%;
-  line-height: 86.3938px;
+  line-height: 81.15781px;
   padding-top: 1px;
   padding-bottom: 1px;
   font-size: 16px;
@@ -483,7 +521,7 @@
   position: absolute;
   height: 30px;
   width: 50px;
-  left: 360px;
+  left: 340px;
   z-index: 500;
   display: block;
   top: 50%;
@@ -547,5 +585,23 @@
       -ms-flex-direction: column;
           flex-direction: column;
   color: white;
+}
+
+.center {
+  width: 100%;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
 }
 /*# sourceMappingURL=style.css.map */

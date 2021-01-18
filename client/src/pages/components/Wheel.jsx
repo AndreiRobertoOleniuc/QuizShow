@@ -1,8 +1,8 @@
-import React from 'react'
+import React, { useState, useEffect } from 'react'
 
-const Wheel = ({ setPrize, setPrizeSet }) => {
-    const [styling, setStyling] = React.useState(false);
-    const [prizes, setPrizes] = React.useState([
+const Wheel = ({ setPrize, setPrizeSet, setGameState, gameState }) => {
+    const [styling, setStyling] = useState(false);
+    const [prizes, setPrizes] = useState([
         100,
         1000,
         10000,
@@ -19,11 +19,11 @@ const Wheel = ({ setPrize, setPrizeSet }) => {
     function shuffle(array) {
         return array.sort(() => Math.random() - 0.5);
     }
+
     const spin = () => {
         setPrizes(shuffle(prizes));
         console.log(prizes[6]);
         setStyling(!styling);
-
         setTimeout(() => {
             setPrize(prizes[6]);
             setPrizeSet(true);
@@ -31,8 +31,8 @@ const Wheel = ({ setPrize, setPrizeSet }) => {
                 setStyling(false);
                 setPrizeSet(false);
             })
-        }, 5500);
-    }
+        }, 8000);
+    };
     return (
         <div className="wheel">
             <div className="container">
@@ -56,4 +56,4 @@ const Wheel = ({ setPrize, setPrizeSet }) => {
     )
 }
 
-export default Wheel;
+export default Wheel;   
