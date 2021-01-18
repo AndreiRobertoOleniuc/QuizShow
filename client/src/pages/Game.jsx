@@ -5,6 +5,7 @@ import Inputs from "./components/Inputs";
 import Wheel from "./components/Wheel";
 import axios from "axios";
 import PacmanLoader from "react-spinners/PacmanLoader";
+import Response from './components/Response';
 
 const Game = () => {
     const [input, setInput] = useState("");
@@ -15,6 +16,11 @@ const Game = () => {
     const [chars, setChars] = useState([]);
     const [loading, setLoading] = useState(true);
 
+    //States
+    const [charBoxState, setCharBoxState] = useState(false);
+    const [wheelState, setWheelState] = useState(true);
+    const [weiterSpielenState, setWeiterSpielenState] = useState(false);
+    const [aufhoerenState, setAufhoerenState] = useState(false);
     useEffect(() => {
         axios.get("http://localhost:8080/startGame?name=Andrei")
             .then((res) => {
@@ -30,6 +36,14 @@ const Game = () => {
                 console.error(err);
             })
     }, []);
+    const doResult = (res) => {
+        console.log(res);
+        if (res == "add") {
+            setPlayer({ ...player, betrag: player.betrag + parseInt(prize) });
+        } else if (res == "sub") {
+            setPlayer({ ...player, lebensPunkt: player.lebensPunkt - 1 })
+        }
+    }
     return (
         <div>
             {loading ?
@@ -39,15 +53,31 @@ const Game = () => {
                 (
                     <div className="gamePage">
                         <Title title={"Wheel of Fortune"} />
-                        <Grid userinput={input} chars={chars} setChars={setChars} wort={wort} />
+                        <Grid userinput={input} chars={chars} setChars={setChars} wort={wort} doResult={doResult} />
                         <div className="controlsAndWheel">
                             <div className="holder">
-                                <Inputs setInput={setInput} player={player} />
-                                <Wheel setPrize={setPrize} setPrizeSet={setPrizeSet} />
+                                <Inputs
+                                    setInput={setInput}
+                                    player={player}
+                                    charBoxState={charBoxState}
+                                    setCharBoxState={setCharBoxState}
+                                    setWheelState={setWheelState}
+                                    weiterSpielenState={weiterSpielenState}
+                                    setWeiterSpielenState={setWeiterSpielenState}
+                                    aufhoerenState={aufhoerenState}
+                                    setAufhoerenState={setAufhoerenState}
+                                />
+                                <Wheel
+                                    setPrize={setPrize}
+                                    setPrizeSet={setPrizeSet}
+                                    setCharBoxState={setCharBoxState}
+                                    wheelState={wheelState}
+                                    setWheelState={setWheelState}
+                                />
                             </div>
                         </div>
                         {prizeSet ? (
-                            <div id="prizeMsg"><h1>{prize}</h1></div>
+                            <Response res={prize} />
                         ) :
                             (null)
                         }

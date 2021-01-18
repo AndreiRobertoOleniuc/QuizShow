@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 
-function Grid({ userinput, chars, setChars, wort }) {
+function Grid({ userinput, chars, setChars, wort, doResult }) {
     const maxChars = 39;
     const items = new Array(maxChars).fill(null);
     let iterator = -1;
@@ -8,18 +8,21 @@ function Grid({ userinput, chars, setChars, wort }) {
         checkBuchStabe(userinput);
     }, [userinput]);
     const checkBuchStabe = () => {
-        setChars(chars.map((item) => {
-            if (userinput.toUpperCase() === item.symbol.toUpperCase()) {
-                return {
-                    ...item,
-                    visible: true
+        if (userinput !== "") {
+            setChars(chars.map((item) => {
+                if (userinput.toUpperCase() === item.symbol.toUpperCase()) {
+                    doResult("add");
+                    return {
+                        ...item,
+                        visible: true
+                    }
+                } else {
+                    return {
+                        ...item
+                    }
                 }
-            } else {
-                return {
-                    ...item
-                }
-            }
-        }))
+            }))
+        }
     }
     return (
         <div className="wortFeld">

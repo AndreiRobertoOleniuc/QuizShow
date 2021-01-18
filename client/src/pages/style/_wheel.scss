@@ -160,6 +160,15 @@ $rotation: 360deg / $numberOfSlices;
                     background-color: rgb(5, 56, 133);
                 }
             }
+            #nonFunc{
+                color:white;
+                background-color: rgba(78, 78, 78, 0.205);
+                border: 0px;
+                width:12vh;
+                height:5vh;
+                margin-top:1vh;
+                border-radius:20px; 
+            }
     }
 }
 

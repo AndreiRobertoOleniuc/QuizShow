@@ -139,6 +139,9 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   width: 70%;
   height: 52vh;
   border-radius: 10px;
@@ -251,7 +254,7 @@
   font-size: large;
 }
 
-.gamePage .controlsAndWheel .holder .inputs .plate .buttonsActionen button {
+.gamePage .controlsAndWheel .holder .inputs .plate .buttonsActionen .actionBtn button {
   background-color: #107197;
   border-radius: 10px;
   border: 0px;
@@ -259,8 +262,16 @@
   color: white;
 }
 
-.gamePage .controlsAndWheel .holder .inputs .plate .buttonsActionen button:hover {
+.gamePage .controlsAndWheel .holder .inputs .plate .buttonsActionen .actionBtn button:hover {
   background-color: #0f516b;
+}
+
+.gamePage .controlsAndWheel .holder .inputs .plate .buttonsActionen .nonFunc button {
+  background-color: rgba(78, 78, 78, 0.205);
+  border-radius: 10px;
+  border: 0px;
+  padding: 2vh;
+  color: white;
 }
 
 .gamePage .controlsAndWheel .holder .wheel {
@@ -517,6 +528,16 @@
   background-color: #053885;
 }
 
+.gamePage .controlsAndWheel .holder .wheel .container #nonFunc {
+  color: white;
+  background-color: rgba(78, 78, 78, 0.205);
+  border: 0px;
+  width: 12vh;
+  height: 5vh;
+  margin-top: 1vh;
+  border-radius: 20px;
+}
+
 .gamePage .controlsAndWheel .holder .arrow {
   position: absolute;
   height: 30px;
@@ -603,5 +624,12 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
+}
+
+.res {
+  position: absolute;
+  /* or absolute */
+  top: 77%;
+  left: 23%;
 }
 /*# sourceMappingURL=style.css.map */

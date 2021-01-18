@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 
-const Wheel = ({ setPrize, setPrizeSet, setGameState, gameState }) => {
+const Wheel = ({ setPrize, setPrizeSet, setCharBoxState, wheelState, setWheelState }) => {
     const [styling, setStyling] = useState(false);
     const [prizes, setPrizes] = useState([
         100,
@@ -27,11 +27,10 @@ const Wheel = ({ setPrize, setPrizeSet, setGameState, gameState }) => {
         setTimeout(() => {
             setPrize(prizes[6]);
             setPrizeSet(true);
-            setTimeout(() => {
-                setStyling(false);
-                setPrizeSet(false);
-            })
-        }, 8000);
+            setStyling(false);
+            setCharBoxState(true);
+            setWheelState(false);
+        }, 7000);
     };
     return (
         <div className="wheel">
@@ -50,7 +49,7 @@ const Wheel = ({ setPrize, setPrizeSet, setGameState, gameState }) => {
                         <span className="pointer"></span>
                     </div>
                 </div>
-                <button id="spin" onClick={spin}>Spin</button>
+                <button id={wheelState ? "spin" : "nonFunc"} onClick={wheelState ? spin : null}>Spin</button>
             </div>
         </div>
     )
