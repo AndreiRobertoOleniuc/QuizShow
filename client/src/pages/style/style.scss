@@ -24,7 +24,35 @@ $textColor: rgb(255, 255, 255);
 }
 
 .res{
-    position: absolute; /* or absolute */
-    top: 77%;
-    left: 23%;
+    position: fixed;
+    width: 20%;
+    height: 21%;
+    top: 0;
+    left: 50;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top:17vh;
+    background-color: rgb(5, 56, 133);
+    border-radius: 20px;
+    color:white;
+    button{
+        margin-top: 1.3vh;
+        background-color: rgb(5, 35, 80);
+        border-radius: 10px;
+        border: 0px;
+        color:white;
+        padding: 2vh;
+    }
+    border: 3px solid;
+    transition: opacity 400ms ease;
+}
+
+
+.show {
+    opacity: 1;
+}
+.hide {
+    opacity: 0;
 }

@@ -1,39 +1,35 @@
-import React, { useState, useEffect } from 'react'
+import React, { useState } from 'react'
+import Response from './Response';
 
-const Wheel = ({ setPrize, setPrizeSet, setCharBoxState, wheelState, setWheelState }) => {
+const Wheel = ({ setGameState }) => {
     const [styling, setStyling] = useState(false);
-    const [prizes, setPrizes] = useState([
-        100,
-        1000,
-        10000,
-        9,
-        40,
-        8000,
-        200000,
-        1000000,
-        1,
-        "Bankrott",
-        60,
-        9999
-    ]);
+    const [styling2, setStyling2] = useState(true);
+    const [prize, setPrize] = useState();
+    const [prizeShow, setPrizeShow] = useState(false);
+    const [btnActive, setBtnActive] = useState(true);
+    const [prizes, setPrizes] = useState(ini);
+
     function shuffle(array) {
         return array.sort(() => Math.random() - 0.5);
     }
-
     const spin = () => {
+        setBtnActive(false);
         setPrizes(shuffle(prizes));
-        console.log(prizes[6]);
+        setPrize(prizes[6]);
         setStyling(!styling);
         setTimeout(() => {
-            setPrize(prizes[6]);
-            setPrizeSet(true);
             setStyling(false);
-            setCharBoxState(true);
-            setWheelState(false);
+            setPrizeShow(true);
         }, 7000);
     };
+    const changeState = () => {
+        setStyling2(false);
+        setTimeout(() => {
+            setGameState(true);
+        }, 500);
+    }
     return (
-        <div className="wheel">
+        <div className={`wheel ${styling2 ? 'show' : 'hide'}`}>
             <div className="container">
                 <div className="board">
                     <div className="spinner-table">
@@ -49,10 +45,26 @@ const Wheel = ({ setPrize, setPrizeSet, setCharBoxState, wheelState, setWheelSta
                         <span className="pointer"></span>
                     </div>
                 </div>
-                <button id={wheelState ? "spin" : "nonFunc"} onClick={wheelState ? spin : null}>Spin</button>
+                <button id={btnActive ? 'spin' : 'nonFunc'} onClick={btnActive ? spin : null}>Spin</button>
             </div>
+            <Response res={prize} changeState={changeState} style={prizeShow ? 'show' : 'hide'} />
         </div>
     )
 }
+
+const ini = [
+    100,
+    1000,
+    10000,
+    9,
+    40,
+    8000,
+    200000,
+    1000000,
+    1,
+    "Bankrott",
+    60,
+    9999
+]
 
 export default Wheel;   

@@ -12,6 +12,7 @@ $rotation: 360deg / $numberOfSlices;
     flex-direction: column;
     align-items: center;
     width: 50%;
+    transition: opacity 200ms ease;
     .container {
         display: flex;
         flex-direction: column;

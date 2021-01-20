@@ -145,8 +145,8 @@
   width: 70%;
   height: 52vh;
   border-radius: 10px;
-  -webkit-box-shadow: 10px 10px 10px 0 rgba(36, 36, 36, 0.205);
-          box-shadow: 10px 10px 10px 0 rgba(36, 36, 36, 0.205);
+  -webkit-box-shadow: 5px 5px 10px 0 rgba(36, 36, 36, 0.205);
+          box-shadow: 5px 5px 10px 0 rgba(36, 36, 36, 0.205);
 }
 
 .gamePage .controlsAndWheel .holder .inputs {
@@ -158,6 +158,8 @@
       -ms-flex-direction: column;
           flex-direction: column;
   width: 50%;
+  -webkit-transition: opacity 200ms ease;
+  transition: opacity 200ms ease;
 }
 
 .gamePage .controlsAndWheel .holder .inputs .plate {
@@ -286,6 +288,8 @@
       -ms-flex-align: center;
           align-items: center;
   width: 50%;
+  -webkit-transition: opacity 200ms ease;
+  transition: opacity 200ms ease;
 }
 
 .gamePage .controlsAndWheel .holder .wheel .container {
@@ -627,9 +631,47 @@
 }
 
 .res {
-  position: absolute;
-  /* or absolute */
-  top: 77%;
-  left: 23%;
+  position: fixed;
+  width: 20%;
+  height: 21%;
+  top: 0;
+  left: 50;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 17vh;
+  background-color: #053885;
+  border-radius: 20px;
+  color: white;
+  border: 3px solid;
+  -webkit-transition: opacity 400ms ease;
+  transition: opacity 400ms ease;
+}
+
+.res button {
+  margin-top: 1.3vh;
+  background-color: #052350;
+  border-radius: 10px;
+  border: 0px;
+  color: white;
+  padding: 2vh;
+}
+
+.show {
+  opacity: 1;
+}
+
+.hide {
+  opacity: 0;
 }
 /*# sourceMappingURL=style.css.map */

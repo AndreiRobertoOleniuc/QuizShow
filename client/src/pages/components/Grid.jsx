@@ -3,15 +3,17 @@ import React, { useState, useEffect } from 'react'
 function Grid({ userinput, chars, setChars, wort, doResult }) {
     const maxChars = 39;
     const items = new Array(maxChars).fill(null);
+    let correctness = false;
     let iterator = -1;
     useEffect(() => {
         checkBuchStabe(userinput);
     }, [userinput]);
     const checkBuchStabe = () => {
-        if (userinput !== "") {
+        if (userinput == null) { }
+        else {
             setChars(chars.map((item) => {
                 if (userinput.toUpperCase() === item.symbol.toUpperCase()) {
-                    doResult("add");
+                    correctness = true;
                     return {
                         ...item,
                         visible: true
@@ -22,6 +24,12 @@ function Grid({ userinput, chars, setChars, wort, doResult }) {
                     }
                 }
             }))
+            if (correctness === true) {
+                doResult("add");
+            } else {
+                doResult("sub");
+                correctness = false;
+            }
         }
     }
     return (
