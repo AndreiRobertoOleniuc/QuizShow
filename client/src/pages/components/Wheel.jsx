@@ -1,30 +1,46 @@
 import React, { useState } from 'react'
 import Response from './Response';
+import ini from "../data/Preise";
 
-const Wheel = ({ setGameState }) => {
+const Wheel = ({ setGameState, setWheelPrize }) => {
+    //Dreht sich Style
     const [styling, setStyling] = useState(false);
+    //Animations Style
     const [styling2, setStyling2] = useState(true);
+    //Preis intern
     const [prize, setPrize] = useState();
     const [prizeShow, setPrizeShow] = useState(false);
+    //Btn zustand
     const [btnActive, setBtnActive] = useState(true);
+    //Preise
     const [prizes, setPrizes] = useState(ini);
 
     function shuffle(array) {
         return array.sort(() => Math.random() - 0.5);
     }
     const spin = () => {
+        //Schalte Button aus
         setBtnActive(false);
+        //Setzte die Preise neu
         setPrizes(shuffle(prizes));
+        //Setzte den Preis
         setPrize(prizes[6]);
+        //Rad soll drehen
         setStyling(!styling);
         setTimeout(() => {
+            //Rad Stoppt
             setStyling(false);
+            //Zeige Preis
             setPrizeShow(true);
         }, 7000);
     };
     const changeState = () => {
+        //Ausblende
         setStyling2(false);
         setTimeout(() => {
+            //Preis setzten hauptklasse
+            setWheelPrize(prizes[6]);
+            //Zurück zu dem Inputs
             setGameState(true);
         }, 500);
     }
@@ -52,19 +68,5 @@ const Wheel = ({ setGameState }) => {
     )
 }
 
-const ini = [
-    100,
-    1000,
-    10000,
-    9,
-    40,
-    8000,
-    200000,
-    1000000,
-    1,
-    "Bankrott",
-    60,
-    9999
-]
 
 export default Wheel;   

@@ -7,14 +7,23 @@ import axios from "axios";
 import PacmanLoader from "react-spinners/PacmanLoader";
 
 const Game = () => {
+    //Player und Input
     const [input, setInput] = useState(null);
     const [player, setPlayer] = useState({});
+    //Wort und Chars
     const [wort, setWort] = useState({});
     const [chars, setChars] = useState([]);
+    //Loading
     const [loading, setLoading] = useState(true);
-
+    //Game State
     const [gameState, setGameState] = useState(false);
+    //Prize
+    const [wheelprize, setWheelPrize] = useState();
+
     useEffect(() => {
+        startGame();
+    }, []);
+    const startGame = async () => {
         axios.get("http://localhost:8080/startGame?name=Andrei")
             .then((res) => {
                 setPlayer(res.data.player);
@@ -28,7 +37,7 @@ const Game = () => {
             .catch((err) => {
                 console.error(err);
             })
-    }, []);
+    }
     const doResult = (res) => {
         console.log(res);
         if (res === "add") {
@@ -55,10 +64,12 @@ const Game = () => {
                                         player={player}
                                         setGameState={setGameState}
                                         gameState={gameState}
+                                        wheelprize={wheelprize}
                                     />
                                 ) : (
                                         <Wheel
                                             setGameState={setGameState}
+                                            setWheelPrize={setWheelPrize}
                                         />
                                     )}
                             </div>

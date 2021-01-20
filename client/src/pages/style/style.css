@@ -660,11 +660,17 @@
 
 .res button {
   margin-top: 1.3vh;
-  background-color: #052350;
+  background-color: white;
   border-radius: 10px;
   border: 0px;
-  color: white;
-  padding: 2vh;
+  color: black;
+  padding: 1.3vh;
+  -webkit-transition: all 200ms ease-in-out;
+  transition: all 200ms ease-in-out;
+}
+
+.res button:hover {
+  background-color: #c5c5c5;
 }
 
 .show {

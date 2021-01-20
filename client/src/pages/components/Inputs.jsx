@@ -1,7 +1,8 @@
 import React, { useEffect, useState } from 'react'
+import chars from "../data/Chars";
 
-const Inputs = ({ setInput, player, setGameState }) => {
-    const alphabet = ["a", "b", "c", "d", "e", "f", "g", "h", "i", "j", "k", "l", "m", "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"]
+const Inputs = ({ setInput, player, setGameState, wheelprize }) => {
+    const alphabet = chars;
     const [vokalMode, setVokalMode] = useState(false);
     const [styling, setStyling] = useState(true);
     var searchWord = (e) => {
@@ -18,6 +19,9 @@ const Inputs = ({ setInput, player, setGameState }) => {
             setGameState(false);
         }, 500);
     }
+    useEffect(() => {
+        console.log(wheelprize);
+    }, []);
     return (
         <div className={`inputs ${styling ? 'show' : 'hide'}`}>
             <div className="plate">

@@ -39,11 +39,15 @@ $textColor: rgb(255, 255, 255);
     color:white;
     button{
         margin-top: 1.3vh;
-        background-color: rgb(5, 35, 80);
+        background-color: rgb(255, 255, 255);
         border-radius: 10px;
         border: 0px;
-        color:white;
-        padding: 2vh;
+        color:black;
+        padding: 1.3vh;
+        transition: all 200ms ease-in-out;
+        &:hover{
+            background-color: rgb(197, 197, 197); 
+        }
     }
     border: 3px solid;
     transition: opacity 400ms ease;
