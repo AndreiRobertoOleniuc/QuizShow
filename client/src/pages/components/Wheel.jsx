@@ -63,7 +63,9 @@ const Wheel = ({ setGameState, setWheelPrize }) => {
                 </div>
                 <button id={btnActive ? 'spin' : 'nonFunc'} onClick={btnActive ? spin : null}>Spin</button>
             </div>
-            <Response res={prize} changeState={changeState} style={prizeShow ? 'show' : 'hide'} />
+            {prizeShow ? (
+                <Response res={prize} changeState={changeState} />
+            ) : (null)}
         </div>
     )
 }

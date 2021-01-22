@@ -145,8 +145,6 @@
   width: 70%;
   height: 52vh;
   border-radius: 10px;
-  -webkit-box-shadow: 5px 5px 10px 0 rgba(36, 36, 36, 0.205);
-          box-shadow: 5px 5px 10px 0 rgba(36, 36, 36, 0.205);
 }
 
 .gamePage .controlsAndWheel .holder .inputs {
@@ -588,12 +586,6 @@
   border-color: transparent #004bbb transparent transparent;
 }
 
-.gamePage #prizeMsg {
-  position: absolute;
-  top: 0;
-  left: 0;
-}
-
 .app {
   top: 0;
   left: 0;
@@ -654,8 +646,6 @@
   border-radius: 20px;
   color: white;
   border: 3px solid;
-  -webkit-transition: opacity 400ms ease;
-  transition: opacity 400ms ease;
 }
 
 .res button {

@@ -1,11 +1,19 @@
 import React from 'react'
+import styled, { keyframes } from 'styled-components';
+import { tada } from 'react-animations';
 
-const Response = ({ res, changeState, style }) => {
+const bounceAnimation = keyframes`${tada}`;
+
+const BouncyDiv = styled.div`
+    animation: 1s ${bounceAnimation};
+`;
+
+const Response = ({ res, changeState }) => {
     return (
-        <div className={`res ${style}`}>
+        <BouncyDiv className="res">
             <h1>{res}!!!</h1>
             <button onClick={changeState}>Weiter</button>
-        </div>
+        </BouncyDiv>
     )
 }
 
