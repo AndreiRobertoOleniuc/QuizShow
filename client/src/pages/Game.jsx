@@ -20,6 +20,8 @@ const Game = () => {
     //Prize
     const [wheelprize, setWheelPrize] = useState();
 
+    const [chosenChars, setChosenChars] = useState([]);
+    const [gameLost, setGameLost] = useState(false);
     useEffect(() => {
         startGame();
     }, []);
@@ -41,11 +43,16 @@ const Game = () => {
     const doResult = (res) => {
         console.log(res);
         if (res === "add") {
-            setPlayer({ ...player, betrag: player.betrag + 0 });
+            setPlayer({ ...player, betrag: player.betrag + wheelprize });
         } else if (res === "sub") {
             setPlayer({ ...player, lebensPunkt: player.lebensPunkt - 1 })
         }
     }
+    useEffect(() => {
+        if (player.lebensPunkt === 0) {
+            setGameLost(true);
+        }
+    }, [player.lebensPunkt]);
     return (
         <div>
             {loading ?
@@ -65,6 +72,8 @@ const Game = () => {
                                         setGameState={setGameState}
                                         gameState={gameState}
                                         wheelprize={wheelprize}
+                                        chosenChars={chosenChars}
+                                        setChosenChars={setChosenChars}
                                     />
                                 ) : (
                                         <Wheel

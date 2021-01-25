@@ -1,11 +1,11 @@
 import React from 'react'
 import styled, { keyframes } from 'styled-components';
-import { tada } from 'react-animations';
+import { tada } from "react-animations";
 
 const bounceAnimation = keyframes`${tada}`;
 
 const BouncyDiv = styled.div`
-    animation: 1s ${bounceAnimation};
+    animation: 1000ms ${bounceAnimation};
 `;
 
 const Response = ({ res, changeState }) => {
