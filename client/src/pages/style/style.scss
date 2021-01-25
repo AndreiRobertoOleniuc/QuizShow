@@ -59,3 +59,38 @@ $textColor: rgb(255, 255, 255);
 .hide {
     opacity: 0;
 }
+
+.tot{
+    position: fixed;
+    width: 60%;
+    height: 40%;
+    top: 0;
+    left: 50;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top:17vh;
+    background-color: rgb(5, 56, 133);
+    border-radius: 20px;
+    color:white;
+    h1{
+        font-size: 10vh;
+    } 
+    p{
+        font-size: 3vh;
+    }
+    button{
+        margin-top: 1.3vh;
+        background-color: rgb(255, 255, 255);
+        border-radius: 10px;
+        border: 0px;
+        color:black;
+        padding: 1.3vh;
+        transition: all 200ms ease-in-out;
+        &:hover{
+            background-color: rgb(197, 197, 197); 
+        }
+    }
+    border: 3px solid;
+}

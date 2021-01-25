@@ -5,7 +5,7 @@ import Inputs from "./components/Inputs";
 import Wheel from "./components/Wheel";
 import axios from "axios";
 import PacmanLoader from "react-spinners/PacmanLoader";
-
+import Tot from "./messages/LostMessage";
 const Game = () => {
     //Player und Input
     const [input, setInput] = useState(null);
@@ -61,28 +61,34 @@ const Game = () => {
                 </div>) :
                 (
                     <div className="gamePage">
-                        <Title title={"Wheel of Fortune"} />
-                        <Grid userinput={input} chars={chars} setChars={setChars} wort={wort} doResult={doResult} />
-                        <div className="controlsAndWheel">
-                            <div className="holder">
-                                {gameState ? (
-                                    <Inputs
-                                        setInput={setInput}
-                                        player={player}
-                                        setGameState={setGameState}
-                                        gameState={gameState}
-                                        wheelprize={wheelprize}
-                                        chosenChars={chosenChars}
-                                        setChosenChars={setChosenChars}
-                                    />
-                                ) : (
-                                        <Wheel
-                                            setGameState={setGameState}
-                                            setWheelPrize={setWheelPrize}
-                                        />
-                                    )}
-                            </div>
-                        </div>
+                        {gameLost ? (
+                            <Tot />
+                        ) : (
+                                <div>
+                                    <Title title={"Wheel of Fortune"} />
+                                    <Grid userinput={input} chars={chars} setChars={setChars} wort={wort} doResult={doResult} />
+                                    <div className="controlsAndWheel">
+                                        <div className="holder">
+                                            {gameState ? (
+                                                <Inputs
+                                                    setInput={setInput}
+                                                    player={player}
+                                                    setGameState={setGameState}
+                                                    gameState={gameState}
+                                                    wheelprize={wheelprize}
+                                                    chosenChars={chosenChars}
+                                                    setChosenChars={setChosenChars}
+                                                />
+                                            ) : (
+                                                    <Wheel
+                                                        setGameState={setGameState}
+                                                        setWheelPrize={setWheelPrize}
+                                                    />
+                                                )}
+                                        </div>
+                                    </div>
+                                </div>
+                            )}
                     </div>
                 )
             }
