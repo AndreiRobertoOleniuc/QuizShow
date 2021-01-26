@@ -1,0 +1,764 @@
+@import url("https://fonts.googleapis.com/css2?family=Lato&display=swap");
+.gamePage {
+  width: 100%;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.gamePage .title {
+  margin-top: 2vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.gamePage .wortFeld {
+  margin-top: 2vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+}
+
+.gamePage .wortFeld .kategorie {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 30%;
+  height: 3vh;
+  background-color: rgba(255, 255, 255, 0.212);
+  padding: 2vh;
+  border-radius: 0px 0px 10px 10px;
+  -webkit-box-shadow: 10px 10px 10px 0 rgba(36, 36, 36, 0.205);
+          box-shadow: 10px 10px 10px 0 rgba(36, 36, 36, 0.205);
+}
+
+.gamePage .wortFeld .holder {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  width: 70%;
+  height: 28vh;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  background-color: white;
+  padding: 2vh;
+  border-radius: 10px;
+  -webkit-box-shadow: 10px 10px 10px 0 rgba(36, 36, 36, 0.205);
+          box-shadow: 10px 10px 10px 0 rgba(36, 36, 36, 0.205);
+}
+
+.gamePage .wortFeld .holder .char {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  background-color: #2d0068;
+  border: 2px solid white;
+  width: 10%;
+  font-size: 2vh;
+  font-weight: bold;
+}
+
+.gamePage .wortFeld .holder .charEmpty {
+  background-color: #5c5c5c;
+  border: 2px solid white;
+  padding: 20px;
+  width: 10%;
+}
+
+.gamePage .wortFeld .holder .edge {
+  background-color: white;
+  border: 2px solid white;
+  padding: 20px;
+  width: 10%;
+}
+
+.gamePage .controlsAndWheel {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.gamePage .controlsAndWheel .holder {
+  margin-top: 3vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  width: 70%;
+  height: 52vh;
+  border-radius: 10px;
+}
+
+.gamePage .controlsAndWheel .holder .spielerInfo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 30%;
+  height: 52vh;
+}
+
+.gamePage .controlsAndWheel .holder .spielerInfo .plate {
+  padding: 2vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  background-color: #053885;
+  border-radius: 10px;
+  width: 90%;
+  height: 35vh;
+  -webkit-box-shadow: 10px 10px 10px 0 rgba(36, 36, 36, 0.205);
+          box-shadow: 10px 10px 10px 0 rgba(36, 36, 36, 0.205);
+}
+
+.gamePage .controlsAndWheel .holder .spielerInfo .plate .text {
+  color: white;
+  font-size: 1.3vw;
+  -webkit-transition: color 200ms ease;
+  transition: color 200ms ease;
+}
+
+.gamePage .controlsAndWheel .holder .spielerInfo .plate .up {
+  color: #00c700;
+}
+
+.gamePage .controlsAndWheel .holder .spielerInfo .plate .down {
+  color: #cf0000;
+}
+
+.gamePage .controlsAndWheel .holder .inputs {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 70%;
+  height: 52vh;
+  -webkit-transition: opacity 200ms ease;
+  transition: opacity 200ms ease;
+  padding: 3vh;
+}
+
+.gamePage .controlsAndWheel .holder .inputs .charBox {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  width: 100%;
+  height: 30vh;
+  background-color: rgba(255, 255, 255, 0.219);
+  border-radius: 10px;
+}
+
+.gamePage .controlsAndWheel .holder .inputs .charBox * {
+  margin: 0.5vh;
+}
+
+.gamePage .controlsAndWheel .holder .inputs .charBox .working {
+  width: 13.2%;
+  height: auto;
+  background-color: #004bbb;
+  border: 0px;
+  border-radius: 10px;
+  color: white;
+  -webkit-transition: all ease-in-out 200ms;
+  transition: all ease-in-out 200ms;
+}
+
+.gamePage .controlsAndWheel .holder .inputs .charBox .working:hover {
+  background-color: #0066ff;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.gamePage .controlsAndWheel .holder .inputs .charBox .nonWorking {
+  width: 13.2%;
+  height: auto;
+  background-color: rgba(78, 78, 78, 0.205);
+  border: 0px;
+  border-radius: 10px;
+  color: white;
+  -webkit-transition: all ease 200ms;
+  transition: all ease 200ms;
+}
+
+.gamePage .controlsAndWheel .holder .inputs .buttonsActionen {
+  margin-top: 6vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  width: 100%;
+  height: 10vh;
+  border-radius: 10px;
+  font-size: large;
+}
+
+.gamePage .controlsAndWheel .holder .inputs .buttonsActionen .actionBtn button {
+  background-color: #107197;
+  border-radius: 10px;
+  border: 0px;
+  padding: 2vh;
+  color: white;
+  -webkit-transition: all 200ms ease-in-out;
+  transition: all 200ms ease-in-out;
+}
+
+.gamePage .controlsAndWheel .holder .inputs .buttonsActionen .actionBtn button:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.gamePage .controlsAndWheel .holder .inputs .buttonsActionen .nonFunc button {
+  background-color: rgba(78, 78, 78, 0.205);
+  border-radius: 10px;
+  border: 0px;
+  padding: 2vh;
+  color: white;
+  pointer-events: none;
+  -webkit-transition: all 200ms ease-in-out;
+  transition: all 200ms ease-in-out;
+}
+
+.gamePage .controlsAndWheel .holder .wheel {
+  width: 70%;
+  height: 52vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-transition: opacity 200ms ease;
+  transition: opacity 200ms ease;
+}
+
+.gamePage .controlsAndWheel .holder .wheel .container {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  position: relative;
+}
+
+@-webkit-keyframes rotating {
+  from {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@keyframes rotating {
+  from {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+  to {
+    -webkit-transform: rotate(360deg);
+            transform: rotate(360deg);
+  }
+}
+
+@-webkit-keyframes spinning {
+  from {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+  to {
+    -webkit-transform: rotate(3060deg);
+            transform: rotate(3060deg);
+  }
+}
+
+@keyframes spinning {
+  from {
+    -webkit-transform: rotate(0);
+            transform: rotate(0);
+  }
+  to {
+    -webkit-transform: rotate(3060deg);
+            transform: rotate(3060deg);
+  }
+}
+
+.gamePage .controlsAndWheel .holder .wheel .container .board {
+  position: relative;
+}
+
+.gamePage .controlsAndWheel .holder .wheel .container .board .spinner-table {
+  height: 308px;
+  width: 308px;
+  position: relative;
+  border-radius: 100%;
+  overflow: hidden;
+}
+
+.gamePage .controlsAndWheel .holder .wheel .container .board .spinner-table .dial {
+  height: 100%;
+  -webkit-transition: all 8s ease-out;
+  transition: all 8s ease-out;
+  -webkit-animation-fill-mode: forwards;
+          animation-fill-mode: forwards;
+  -webkit-animation-timing-function: linear;
+          animation-timing-function: linear;
+}
+
+.gamePage .controlsAndWheel .holder .wheel .container .board .spinner-table .dial.spinning {
+  -webkit-animation-duration: 5s;
+          animation-duration: 5s;
+  -webkit-animation-timing-function: cubic-bezier(0.44, -0.205, 0, 1.13);
+          animation-timing-function: cubic-bezier(0.44, -0.205, 0, 1.13);
+  -webkit-animation-name: spinning;
+          animation-name: spinning;
+}
+
+.gamePage .controlsAndWheel .holder .wheel .container .board .spinner-table .dial:before {
+  content: '';
+  text-align: center;
+  display: block;
+  line-height: 60px;
+  position: absolute;
+  height: 40px;
+  width: 40px;
+  background: white;
+  -webkit-box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.1);
+          box-shadow: 0 0 5px 5px rgba(0, 0, 0, 0.1);
+  top: 50%;
+  left: 50%;
+  margin-top: -20px;
+  margin-left: -20px;
+  border-radius: 100%;
+  z-index: 200;
+}
+
+.gamePage .controlsAndWheel .holder .wheel .container .board .spinner-table .dial .slice {
+  z-index: 150;
+  position: absolute;
+  top: calc(50% - 40.57891px);
+  height: 81.15781px;
+  left: 50%;
+  width: 50%;
+  color: white;
+  text-align: right;
+  padding-right: 10px;
+  display: block;
+  -webkit-transform-origin: left center;
+          transform-origin: left center;
+}
+
+.gamePage .controlsAndWheel .holder .wheel .container .board .spinner-table .dial .slice:before, .gamePage .controlsAndWheel .holder .wheel .container .board .spinner-table .dial .slice:after {
+  content: "";
+  display: block;
+  width: 0;
+  height: 0;
+  border-style: solid;
+}
+
+.gamePage .controlsAndWheel .holder .wheel .container .board .spinner-table .dial .slice:before {
+  margin-bottom: -1px;
+  margin-top: -2px;
+  border-width: 0 0 44.57891px 155px;
+  border-color: transparent transparent #095B8D transparent;
+}
+
+.gamePage .controlsAndWheel .holder .wheel .container .board .spinner-table .dial .slice:after {
+  margin-top: -1px;
+  margin-bottom: -2px;
+  border-width: 0 155px 44.57891px 0;
+  border-color: transparent #095B8D transparent transparent;
+}
+
+.gamePage .controlsAndWheel .holder .wheel .container .board .spinner-table .dial .slice:nth-child(even):after {
+  border-color: transparent #063c5d transparent transparent;
+}
+
+.gamePage .controlsAndWheel .holder .wheel .container .board .spinner-table .dial .slice:nth-child(even):before {
+  border-color: transparent transparent #063c5d transparent;
+}
+
+.gamePage .controlsAndWheel .holder .wheel .container .board .spinner-table .dial .slice .label {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 70%;
+  line-height: 81.15781px;
+  padding-top: 1px;
+  padding-bottom: 1px;
+  font-size: 16px;
+  text-align: right;
+  padding-left: 20px;
+}
+
+.gamePage .controlsAndWheel .holder .wheel .container .board .spinner-table .dial .slice:nth-child(1) {
+  -webkit-transform: rotate(0deg);
+          transform: rotate(0deg);
+}
+
+.gamePage .controlsAndWheel .holder .wheel .container .board .spinner-table .dial .slice:nth-child(2) {
+  -webkit-transform: rotate(30deg);
+          transform: rotate(30deg);
+}
+
+.gamePage .controlsAndWheel .holder .wheel .container .board .spinner-table .dial .slice:nth-child(3) {
+  -webkit-transform: rotate(60deg);
+          transform: rotate(60deg);
+}
+
+.gamePage .controlsAndWheel .holder .wheel .container .board .spinner-table .dial .slice:nth-child(4) {
+  -webkit-transform: rotate(90deg);
+          transform: rotate(90deg);
+}
+
+.gamePage .controlsAndWheel .holder .wheel .container .board .spinner-table .dial .slice:nth-child(5) {
+  -webkit-transform: rotate(120deg);
+          transform: rotate(120deg);
+}
+
+.gamePage .controlsAndWheel .holder .wheel .container .board .spinner-table .dial .slice:nth-child(6) {
+  -webkit-transform: rotate(150deg);
+          transform: rotate(150deg);
+}
+
+.gamePage .controlsAndWheel .holder .wheel .container .board .spinner-table .dial .slice:nth-child(7) {
+  -webkit-transform: rotate(180deg);
+          transform: rotate(180deg);
+}
+
+.gamePage .controlsAndWheel .holder .wheel .container .board .spinner-table .dial .slice:nth-child(8) {
+  -webkit-transform: rotate(210deg);
+          transform: rotate(210deg);
+}
+
+.gamePage .controlsAndWheel .holder .wheel .container .board .spinner-table .dial .slice:nth-child(9) {
+  -webkit-transform: rotate(240deg);
+          transform: rotate(240deg);
+}
+
+.gamePage .controlsAndWheel .holder .wheel .container .board .spinner-table .dial .slice:nth-child(10) {
+  -webkit-transform: rotate(270deg);
+          transform: rotate(270deg);
+}
+
+.gamePage .controlsAndWheel .holder .wheel .container .board .spinner-table .dial .slice:nth-child(11) {
+  -webkit-transform: rotate(300deg);
+          transform: rotate(300deg);
+}
+
+.gamePage .controlsAndWheel .holder .wheel .container .board .spinner-table .dial .slice:nth-child(12) {
+  -webkit-transform: rotate(330deg);
+          transform: rotate(330deg);
+}
+
+.gamePage .controlsAndWheel .holder .wheel .container #spin {
+  color: white;
+  background-color: #004bbb;
+  border: 0px;
+  width: 12vh;
+  height: 5vh;
+  margin-top: 1vh;
+  border-radius: 20px;
+}
+
+.gamePage .controlsAndWheel .holder .wheel .container #spin:hover {
+  background-color: #053885;
+}
+
+.gamePage .controlsAndWheel .holder .wheel .container #nonFunc {
+  color: white;
+  background-color: rgba(78, 78, 78, 0.205);
+  border: 0px;
+  width: 12vh;
+  height: 5vh;
+  margin-top: 1vh;
+  border-radius: 20px;
+}
+
+.gamePage .controlsAndWheel .holder .arrow {
+  position: absolute;
+  height: 30px;
+  width: 50px;
+  left: 340px;
+  z-index: 500;
+  display: block;
+  top: 50%;
+  margin-top: -15px;
+  -webkit-transform-origin: center right;
+          transform-origin: center right;
+}
+
+.gamePage .controlsAndWheel .holder .arrow .pointer {
+  z-index: 400;
+  display: block;
+  height: 50px;
+  width: 80px;
+}
+
+.gamePage .controlsAndWheel .holder .arrow .pointer:before {
+  content: '';
+  display: block;
+  position: absolute;
+  right: 0;
+  top: 0;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 0 15px 80px;
+  border-color: transparent transparent #004bbb transparent;
+}
+
+.gamePage .controlsAndWheel .holder .arrow .pointer:after {
+  content: '';
+  display: block;
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  width: 0;
+  height: 0;
+  border-style: solid;
+  border-width: 0 80px 15px 0;
+  border-color: transparent #004bbb transparent transparent;
+}
+
+.res {
+  position: absolute;
+  width: 20%;
+  height: 21%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: -75vh;
+  margin-left: 21%;
+  background-color: #053885;
+  border-radius: 20px;
+  color: white;
+  border: 3px solid;
+}
+
+.res button {
+  margin-top: 1.3vh;
+  background-color: white;
+  border-radius: 10px;
+  border: 0px;
+  color: black;
+  padding: 1.3vh;
+  -webkit-transition: all 200ms ease-in-out;
+  transition: all 200ms ease-in-out;
+}
+
+.res button:hover {
+  background-color: #c5c5c5;
+}
+
+.tot {
+  position: fixed;
+  width: 60%;
+  height: 40%;
+  top: 0;
+  left: 50;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 17vh;
+  background-color: #053885;
+  border-radius: 20px;
+  color: white;
+  border: 3px solid;
+}
+
+.tot h1 {
+  font-size: 10vh;
+}
+
+.tot p {
+  font-size: 3vh;
+}
+
+.tot button {
+  margin-top: 1.3vh;
+  background-color: white;
+  border-radius: 10px;
+  border: 0px;
+  color: black;
+  padding: 1.3vh;
+  -webkit-transition: all 200ms ease-in-out;
+  transition: all 200ms ease-in-out;
+}
+
+.tot button:hover {
+  background-color: #c5c5c5;
+}
+
+.app {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-image: -webkit-gradient(linear, left bottom, left top, from(#30cfd0), to(#330867));
+  background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%);
+  font-family: "Lato", sans-serif;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  color: white;
+}
+
+.center {
+  width: 100%;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.show {
+  opacity: 1;
+}
+
+.hide {
+  opacity: 0;
+}
+/*# sourceMappingURL=style.css.map */

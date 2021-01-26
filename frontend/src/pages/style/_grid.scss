@@ -1,0 +1,53 @@
+.wortFeld{
+    margin-top: 2vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction:column;
+    .kategorie{
+        display: flex;
+        flex-direction: column;
+        justify-content:center;
+        align-items:center;
+        width: 30%;
+        height: 3vh;
+        background-color: rgba(255, 255, 255, 0.212);
+        padding: 2vh;
+        border-radius: 0px 0px 10px 10px;
+        box-shadow: 10px 10px 10px 0 rgba(36, 36, 36, 0.205);
+    }
+    .holder{
+        display: flex;
+        flex-direction: row;
+        width: 70%;
+        height: 28vh;
+        flex-wrap: wrap;
+        background-color: white;
+        padding: 2vh;
+        border-radius: 10px;
+        box-shadow: 10px 10px 10px 0 rgba(36, 36, 36, 0.205);
+        .char{
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            background-color: rgb(45, 0, 104);
+            border: 2px solid white;
+            width: 10%;
+            font-size: 2vh;
+            font-weight: bold;
+        }
+        .charEmpty{
+            background-color: rgb(92, 92, 92);
+            border: 2px solid white;
+            padding: 20px;
+            width: 10%;
+        }
+        .edge{
+            background-color: rgb(255, 255, 255);
+            border: 2px solid white;
+            padding: 20px;
+            width: 10%;
+        }
+    }
+}
