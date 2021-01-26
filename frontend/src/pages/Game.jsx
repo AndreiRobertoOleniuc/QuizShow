@@ -55,7 +55,6 @@ const Game = () => {
     }
     useEffect(() => {
         if (player.lebensPunkt === 0) {
-            setGameLost(true);
             history.push("/GameOver");
         }
     }, [player.lebensPunkt]);
