@@ -58,67 +58,57 @@ const Inputs = ({ setInput, player, setGameState, setChosenChars, chosenChars })
     }
     return (
         <div className={`inputs ${styling ? 'show' : 'hide'}`}>
-            <div className="plate">
-                <div className="charBox">
-                    {alphabet.map((item) => {
-                        let vowelList = 'AEIOUaeiou'
-                        if (allowCharInput) {
-                            if (vokalMode) {
-                                if (vowelList.indexOf(item) !== -1) {
-                                    if (chosenChars.includes(item)) {
-                                        return (
-                                            <button className="nonWorking" key={item} id={item} onClick={null}>{item}</button>
-                                        )
-                                    } else {
-                                        return (
-                                            <button className="working" key={item} id={item} onClick={searchWord}>{item}</button>
-                                        )
-                                    }
-                                } else {
+            <div className="charBox">
+                {alphabet.map((item) => {
+                    let vowelList = 'AEIOUaeiou'
+                    if (allowCharInput) {
+                        if (vokalMode) {
+                            if (vowelList.indexOf(item) !== -1) {
+                                if (chosenChars.includes(item)) {
                                     return (
                                         <button className="nonWorking" key={item} id={item} onClick={null}>{item}</button>
+                                    )
+                                } else {
+                                    return (
+                                        <button className="working" key={item} id={item} onClick={searchWord}>{item}</button>
                                     )
                                 }
                             } else {
-                                if (vowelList.indexOf(item) !== -1) {
+                                return (
+                                    <button className="nonWorking" key={item} id={item} onClick={null}>{item}</button>
+                                )
+                            }
+                        } else {
+                            if (vowelList.indexOf(item) !== -1) {
+                                return (
+                                    <button className="nonWorking" key={item} id={item} onClick={null}>{item}</button>
+                                )
+                            } else {
+                                if (chosenChars.includes(item)) {
                                     return (
                                         <button className="nonWorking" key={item} id={item} onClick={null}>{item}</button>
                                     )
                                 } else {
-                                    if (chosenChars.includes(item)) {
-                                        return (
-                                            <button className="nonWorking" key={item} id={item} onClick={null}>{item}</button>
-                                        )
-                                    } else {
-                                        return (
-                                            <button className="working" key={item} id={item} onClick={searchWord}>{item}</button>
-                                        )
-                                    }
+                                    return (
+                                        <button className="working" key={item} id={item} onClick={searchWord}>{item}</button>
+                                    )
                                 }
                             }
-                        } else {
-                            return (
-                                <button className="nonWorking" key={item} id={item} onClick={null}>{item}</button>
-                            )
                         }
-                    })}
-                </div>
-                <div className="spielerInfo">
-                    <div className="kontostand">
-                        Kontostand: {player.betrag}
-                    </div>
-                    <div className="lebensPunkte">
-                        Lebenspunkte:{player.lebensPunkt}
-                    </div>
-                </div>
-                <div className="buttonsActionen">
-                    <div className={styleActionbtn[0].style} onClick={styleActionbtn[0].btnStyle ? weiterSpielen : null}><button>Weiter Spielen</button></div>
-                    <div className={styleActionbtn[1].style} ><button>Aufhören</button></div>
-                    <div className={styleActionbtn[2].style} onClick={styleActionbtn[2].btnStyle ? rateVokal : null}><button>Vokal Erraten</button></div>
-                    <div className={styleActionbtn[3].style} ><button>Wort Erraten</button></div>
-                </div>
+                    } else {
+                        return (
+                            <button className="nonWorking" key={item} id={item} onClick={null}>{item}</button>
+                        )
+                    }
+                })}
             </div>
-        </div >
+            <div className="buttonsActionen">
+                <div className={styleActionbtn[0].style} onClick={styleActionbtn[0].btnStyle ? weiterSpielen : null}><button>Weiter Spielen</button></div>
+                <div className={styleActionbtn[1].style} ><button>Aufhören</button></div>
+                <div className={styleActionbtn[2].style} onClick={styleActionbtn[2].btnStyle ? rateVokal : null}><button>Vokal Erraten</button></div>
+                <div className={styleActionbtn[3].style} ><button>Wort Erraten</button></div>
+            </div>
+        </div>
     )
 }
 

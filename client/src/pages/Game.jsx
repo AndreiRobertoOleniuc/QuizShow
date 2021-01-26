@@ -6,6 +6,7 @@ import Wheel from "./components/Wheel";
 import axios from "axios";
 import PacmanLoader from "react-spinners/PacmanLoader";
 import Tot from "./messages/LostMessage";
+import SpielInfo from './components/SpielInfo';
 const Game = () => {
     //Player und Input
     const [input, setInput] = useState(null);
@@ -22,6 +23,7 @@ const Game = () => {
 
     const [chosenChars, setChosenChars] = useState([]);
     const [gameLost, setGameLost] = useState(false);
+    const [zuegeCounter, setZuegeCounter] = useState(0);
     useEffect(() => {
         startGame();
     }, []);
@@ -47,6 +49,7 @@ const Game = () => {
         } else if (res === "sub") {
             setPlayer({ ...player, lebensPunkt: player.lebensPunkt - 1 })
         }
+        setZuegeCounter(zuegeCounter + 1);
     }
     useEffect(() => {
         if (player.lebensPunkt === 0) {
@@ -66,7 +69,13 @@ const Game = () => {
                         ) : (
                                 <div>
                                     <Title title={"Wheel of Fortune"} />
-                                    <Grid userinput={input} chars={chars} setChars={setChars} wort={wort} doResult={doResult} />
+                                    <Grid
+                                        userinput={input}
+                                        chars={chars}
+                                        setChars={setChars}
+                                        wort={wort}
+                                        doResult={doResult}
+                                    />
                                     <div className="controlsAndWheel">
                                         <div className="holder">
                                             {gameState ? (
@@ -85,6 +94,10 @@ const Game = () => {
                                                         setWheelPrize={setWheelPrize}
                                                     />
                                                 )}
+                                            <SpielInfo
+                                                player={player}
+                                                zuegeCounter={zuegeCounter}
+                                            />
                                         </div>
                                     </div>
                                 </div>

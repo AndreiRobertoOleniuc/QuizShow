@@ -73,7 +73,7 @@
       -ms-flex-direction: row;
           flex-direction: row;
   width: 70%;
-  height: 30vh;
+  height: 28vh;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   background-color: white;
@@ -131,7 +131,7 @@
 }
 
 .gamePage .controlsAndWheel .holder {
-  margin-top: 2.5vh;
+  margin-top: 3vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -139,12 +139,65 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: row;
           flex-direction: row;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
   width: 70%;
   height: 52vh;
   border-radius: 10px;
+}
+
+.gamePage .controlsAndWheel .holder .spielerInfo {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 30%;
+  height: 52vh;
+}
+
+.gamePage .controlsAndWheel .holder .spielerInfo .plate {
+  padding: 2vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: space-evenly;
+      -ms-flex-pack: space-evenly;
+          justify-content: space-evenly;
+  background-color: #053885;
+  border-radius: 10px;
+  width: 90%;
+  height: 35vh;
+  -webkit-box-shadow: 10px 10px 10px 0 rgba(36, 36, 36, 0.205);
+          box-shadow: 10px 10px 10px 0 rgba(36, 36, 36, 0.205);
+}
+
+.gamePage .controlsAndWheel .holder .spielerInfo .plate .text {
+  color: white;
+  font-size: 1.3vw;
+  -webkit-transition: color 200ms ease;
+  transition: color 200ms ease;
+}
+
+.gamePage .controlsAndWheel .holder .spielerInfo .plate .up {
+  color: #00c700;
+}
+
+.gamePage .controlsAndWheel .holder .spielerInfo .plate .down {
+  color: #cf0000;
 }
 
 .gamePage .controlsAndWheel .holder .inputs {
@@ -155,24 +208,20 @@
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  width: 50%;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 70%;
+  height: 52vh;
   -webkit-transition: opacity 200ms ease;
   transition: opacity 200ms ease;
+  padding: 3vh;
 }
 
-.gamePage .controlsAndWheel .holder .inputs .plate {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  width: 100%;
-  height: 60vh;
-}
-
-.gamePage .controlsAndWheel .holder .inputs .plate .charBox {
+.gamePage .controlsAndWheel .holder .inputs .charBox {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -183,31 +232,33 @@
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   width: 100%;
-  height: 25vh;
+  height: 30vh;
   background-color: rgba(255, 255, 255, 0.219);
   border-radius: 10px;
 }
 
-.gamePage .controlsAndWheel .holder .inputs .plate .charBox * {
+.gamePage .controlsAndWheel .holder .inputs .charBox * {
   margin: 0.5vh;
 }
 
-.gamePage .controlsAndWheel .holder .inputs .plate .charBox .working {
+.gamePage .controlsAndWheel .holder .inputs .charBox .working {
   width: 12.9%;
   height: auto;
   background-color: #004bbb;
   border: 0px;
   border-radius: 10px;
   color: white;
-  -webkit-transition: all ease 200ms;
-  transition: all ease 200ms;
+  -webkit-transition: all ease-in-out 200ms;
+  transition: all ease-in-out 200ms;
 }
 
-.gamePage .controlsAndWheel .holder .inputs .plate .charBox .working:hover {
-  background-color: #002f75;
+.gamePage .controlsAndWheel .holder .inputs .charBox .working:hover {
+  background-color: #0066ff;
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
 }
 
-.gamePage .controlsAndWheel .holder .inputs .plate .charBox .nonWorking {
+.gamePage .controlsAndWheel .holder .inputs .charBox .nonWorking {
   width: 12.9%;
   height: auto;
   background-color: rgba(78, 78, 78, 0.205);
@@ -218,25 +269,7 @@
   transition: all ease 200ms;
 }
 
-.gamePage .controlsAndWheel .holder .inputs .plate .spielerInfo {
-  margin-top: 2vh;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: justify;
-      -ms-flex-pack: justify;
-          justify-content: space-between;
-  width: 100%;
-  height: 5vh;
-  border-radius: 10px;
-  font-size: large;
-}
-
-.gamePage .controlsAndWheel .holder .inputs .plate .buttonsActionen {
+.gamePage .controlsAndWheel .holder .inputs .buttonsActionen {
   margin-top: 6vh;
   display: -webkit-box;
   display: -ms-flexbox;
@@ -254,7 +287,7 @@
   font-size: large;
 }
 
-.gamePage .controlsAndWheel .holder .inputs .plate .buttonsActionen .actionBtn button {
+.gamePage .controlsAndWheel .holder .inputs .buttonsActionen .actionBtn button {
   background-color: #107197;
   border-radius: 10px;
   border: 0px;
@@ -262,15 +295,14 @@
   color: white;
   -webkit-transition: all 200ms ease-in-out;
   transition: all 200ms ease-in-out;
+}
+
+.gamePage .controlsAndWheel .holder .inputs .buttonsActionen .actionBtn button:hover {
   -webkit-transform: scale(1.1);
           transform: scale(1.1);
 }
 
-.gamePage .controlsAndWheel .holder .inputs .plate .buttonsActionen .actionBtn button:hover {
-  background-color: #0f516b;
-}
-
-.gamePage .controlsAndWheel .holder .inputs .plate .buttonsActionen .nonFunc button {
+.gamePage .controlsAndWheel .holder .inputs .buttonsActionen .nonFunc button {
   background-color: rgba(78, 78, 78, 0.205);
   border-radius: 10px;
   border: 0px;
@@ -282,6 +314,8 @@
 }
 
 .gamePage .controlsAndWheel .holder .wheel {
+  width: 70%;
+  height: 52vh;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -292,7 +326,9 @@
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  width: 50%;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
   -webkit-transition: opacity 200ms ease;
   transition: opacity 200ms ease;
 }
@@ -593,48 +629,10 @@
   border-color: transparent #004bbb transparent transparent;
 }
 
-.app {
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100vh;
-  background-image: -webkit-gradient(linear, left bottom, left top, from(#30cfd0), to(#330867));
-  background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%);
-  font-family: "Lato", sans-serif;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: vertical;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: column;
-          flex-direction: column;
-  color: white;
-}
-
-.center {
-  width: 100%;
-  height: 100vh;
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-orient: horizontal;
-  -webkit-box-direction: normal;
-      -ms-flex-direction: row;
-          flex-direction: row;
-  -webkit-box-pack: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
-}
-
 .res {
-  position: fixed;
+  position: absolute;
   width: 20%;
   height: 21%;
-  top: 0;
-  left: 50;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -648,7 +646,8 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  margin-top: 17vh;
+  margin-top: -75vh;
+  margin-left: 21%;
   background-color: #053885;
   border-radius: 20px;
   color: white;
@@ -668,14 +667,6 @@
 
 .res button:hover {
   background-color: #c5c5c5;
-}
-
-.show {
-  opacity: 1;
-}
-
-.hide {
-  opacity: 0;
 }
 
 .tot {
@@ -725,5 +716,49 @@
 
 .tot button:hover {
   background-color: #c5c5c5;
+}
+
+.app {
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100vh;
+  background-image: -webkit-gradient(linear, left bottom, left top, from(#30cfd0), to(#330867));
+  background-image: linear-gradient(to top, #30cfd0 0%, #330867 100%);
+  font-family: "Lato", sans-serif;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  color: white;
+}
+
+.center {
+  width: 100%;
+  height: 100vh;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.show {
+  opacity: 1;
+}
+
+.hide {
+  opacity: 0;
 }
 /*# sourceMappingURL=style.css.map */
