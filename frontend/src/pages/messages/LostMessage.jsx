@@ -1,6 +1,7 @@
 import React from 'react'
 import styled, { keyframes } from 'styled-components';
 import { rollIn } from "react-animations";
+import { useHistory } from "react-router-dom";
 
 const bounceAnimation = keyframes`${rollIn}`;
 
@@ -9,12 +10,13 @@ const BouncyDiv = styled.div`
 `;
 
 function LostMessage() {
+    let history = useHistory();
     return (
         <div className="center">
             <BouncyDiv className="tot">
                 <h1>Game Over</h1>
                 <p>Du hast all deine Leben verloren</p>
-                <button>Neues spiel</button>
+                <button onClick={() => { history.push("/Game") }}>Neues spiel</button>
             </BouncyDiv>
         </div>
     )

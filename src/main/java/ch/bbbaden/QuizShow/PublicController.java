@@ -18,7 +18,7 @@ public class PublicController {
     @GetMapping("/startGame")
     @CrossOrigin(origins = "http://localhost:3000")
     public StartGame startGame(@RequestParam(value = "name",defaultValue = "0") String name){
-        Spieler player = new Spieler(0,name,3);
+        Spieler player = new Spieler(600,name,3);
         Wort wort = sp.getRandWort();
         StartGame newGame = new StartGame(player,wort);
         return newGame;

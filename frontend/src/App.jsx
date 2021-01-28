@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useState } from 'react'
 import {
     BrowserRouter as Router,
     Switch,
@@ -8,15 +8,25 @@ import {
 import Game from "./pages/Game";
 import Bankrrot from './pages/messages/Bankrott';
 import LostMessage from "./pages/messages/LostMessage";
+import Startingpoint from './pages/Startingpoint';
 import "./pages/style/style.css";
 
 const App = () => {
+    const [inputName, setInputName] = useState("");
+    const [player, setPlayer] = useState({});
     return (
         <div className="app">
             <Router>
                 <Switch>
                     <Route exact path="/">
-                        <Game />
+                        <Startingpoint setInputName={setInputName} />
+                    </Route>
+                    <Route exact path="/Game">
+                        <Game
+                            inputName={inputName}
+                            setPlayer={setPlayer}
+                            player={player}
+                        />
                     </Route>
                     <Route exact path="/Bankrrot">
                         <Bankrrot />

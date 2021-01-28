@@ -718,6 +718,162 @@
   background-color: #c5c5c5;
 }
 
+.vokalPopup {
+  position: absolute;
+  width: 40%;
+  height: 30%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: -75vh;
+  margin-left: 21%;
+  background-color: #053885;
+  border-radius: 20px;
+  color: white;
+  border: 3px solid;
+}
+
+.vokalPopup * {
+  margin: 2vh;
+}
+
+.vokalPopup .input {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+}
+
+.vokalPopup .input * {
+  margin: 2vh;
+}
+
+.vokalPopup .input #ja {
+  margin-top: 1.3vh;
+  background-color: #00ff22;
+  border-radius: 10px;
+  border: 0px;
+  color: white;
+  padding: 1.3vh;
+  -webkit-transition: all 200ms ease-in-out;
+  transition: all 200ms ease-in-out;
+  font-size: large;
+  width: 20%;
+}
+
+.vokalPopup .input #ja:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.vokalPopup .input #nein {
+  margin-top: 1.3vh;
+  background-color: red;
+  border-radius: 10px;
+  border: 0px;
+  color: white;
+  padding: 1.3vh;
+  -webkit-transition: all 200ms ease-in-out;
+  transition: all 200ms ease-in-out;
+  font-size: large;
+  width: 20%;
+}
+
+.vokalPopup .input #nein:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.vokalPopup p {
+  color: red;
+  font-size: 2.3vh;
+  font-weight: 200;
+}
+
+.entrypoint {
+  position: fixed;
+  width: 60%;
+  height: 55%;
+  top: 0;
+  left: 50;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 17vh;
+  background-color: rgba(16, 71, 148, 0.349);
+  -webkit-box-shadow: 5px 5px 10px 0px rgba(4, 16, 34, 0.349);
+          box-shadow: 5px 5px 10px 0px rgba(4, 16, 34, 0.349);
+  border-radius: 20px;
+  color: white;
+}
+
+.entrypoint * {
+  margin: 2vh;
+}
+
+.entrypoint p {
+  font-size: 9vh;
+}
+
+.entrypoint input {
+  background-color: transparent;
+  border: 0px;
+  border-bottom: 3px solid #104794;
+  padding: 1.2vh;
+  width: 30%;
+  color: white;
+  -webkit-transition: all 200ms ease;
+  transition: all 200ms ease;
+  font-size: larger;
+}
+
+.entrypoint input:focus {
+  border-bottom: 3px solid white;
+}
+
+.entrypoint button {
+  margin-top: 1.3vh;
+  background-color: white;
+  border-radius: 10px;
+  border: 0px;
+  color: black;
+  padding: 1.3vh;
+  -webkit-transition: all 200ms ease-in-out;
+  transition: all 200ms ease-in-out;
+  font-size: large;
+}
+
+.entrypoint button:hover {
+  background-color: #c5c5c5;
+}
+
 .app {
   top: 0;
   left: 0;

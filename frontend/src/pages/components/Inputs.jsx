@@ -1,53 +1,23 @@
 import React, { useEffect, useState } from 'react'
 import chars from "../data/Chars";
+import states from "../data/ActionBtnStates";
+import RateVokal from './RateVokal';
 
-const Inputs = ({ setInput, player, setGameState, setChosenChars, chosenChars }) => {
+const Inputs = ({ setInput, player, setPlayer, setGameState, setChosenChars, chosenChars }) => {
     const alphabet = chars;
     const [vokalMode, setVokalMode] = useState(false);
     const [styling, setStyling] = useState(true);
     const [allowCharInput, setAllowCharInput] = useState(true);
-    const [styleActionbtn, setStyleActionbtn] = useState(
-        [
-            {
-                style: "nonFunc",
-                btnStyle: false
-            },
-            {
-                style: "nonFunc",
-                btnStyle: false
-            }, {
-                style: "actionBtn",
-                btnStyle: true
-            }, {
-                style: "actionBtn",
-                btnStyle: true
-            },
-        ]);
-
+    const [styleActionbtn, setStyleActionbtn] = useState(states[0]);
+    const [rateVokalPopup, setRateVokalPopup] = useState(false);
     var searchWord = (e) => {
         setInput(e.target.id);
         setChosenChars([...chosenChars, e.target.id]);
         setAllowCharInput(false);
-        setStyleActionbtn([
-            {
-                style: "actionBtn",
-                btnStyle: true
-            }, {
-                style: "actionBtn",
-                btnStyle: true
-            },
-            {
-                style: "nonFunc",
-                btnStyle: false
-            },
-            {
-                style: "nonFunc",
-                btnStyle: false
-            },
-        ])
+        setStyleActionbtn(states[1])
     };
     const rateVokal = () => {
-        setVokalMode(!vokalMode);
+        setRateVokalPopup(true);
     }
     const weiterSpielen = () => {
         setVokalMode(false);
@@ -108,8 +78,20 @@ const Inputs = ({ setInput, player, setGameState, setChosenChars, chosenChars })
                 <div className={styleActionbtn[2].style} onClick={styleActionbtn[2].btnStyle ? rateVokal : null}><button>Vokal Erraten</button></div>
                 <div className={styleActionbtn[3].style} ><button>Wort Erraten</button></div>
             </div>
+            {rateVokalPopup ? (
+                <RateVokal
+                    player={player}
+                    setPlayer={setPlayer}
+                    setRateVokalPopup={setRateVokalPopup}
+                    setVokalMode={setVokalMode}
+                    setStyleActionbtn={setStyleActionbtn}
+                />
+            ) : (
+                    null
+                )}
         </div>
     )
 }
 
 export default Inputs
+

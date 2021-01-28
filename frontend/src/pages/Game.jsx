@@ -7,11 +7,18 @@ import axios from "axios";
 import SpielInfo from './components/SpielInfo';
 import PacmanLoader from "react-spinners/PacmanLoader";
 import { useHistory } from "react-router-dom";
+import styled, { keyframes } from 'styled-components';
+import { fadeIn } from "react-animations";
 
-const Game = () => {
+const fade = keyframes`${fadeIn}`;
+
+const FadeInDiv = styled.div`
+    animation: 1000ms ${fade};
+`;
+
+const Game = ({ inputName, setPlayer, player }) => {
     //Player und Input
     const [input, setInput] = useState(null);
-    const [player, setPlayer] = useState({});
     //Wort und Chars
     const [wort, setWort] = useState({});
     const [chars, setChars] = useState([]);
@@ -30,7 +37,7 @@ const Game = () => {
         startGame();
     }, []);
     const startGame = async () => {
-        axios.get("http://localhost:8080/startGame?name=Andrei")
+        axios.get(`http://localhost:8080/startGame?name=${inputName}`)
             .then((res) => {
                 setPlayer(res.data.player);
                 setWort({
@@ -59,7 +66,7 @@ const Game = () => {
         }
     }, [player.lebensPunkt]);
     return (
-        <div>
+        <FadeInDiv>
             {loading ?
                 (<div className="center">
                     <PacmanLoader color="white" />
@@ -81,6 +88,7 @@ const Game = () => {
                                         <Inputs
                                             setInput={setInput}
                                             player={player}
+                                            setPlayer={setPlayer}
                                             setGameState={setGameState}
                                             gameState={gameState}
                                             wheelprize={wheelprize}
@@ -105,7 +113,7 @@ const Game = () => {
                     </div>
                 )
             }
-        </div>
+        </FadeInDiv>
     )
 }
 

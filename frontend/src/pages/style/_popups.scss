@@ -60,3 +60,64 @@
     }
     border: 3px solid;
 }
+
+.vokalPopup{
+    position: absolute;
+    width: 40%;
+    height: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top:-75vh;
+    margin-left:21%;
+    background-color: rgb(5, 56, 133);
+    border-radius: 20px;
+    color:white;
+    *{
+        margin: 2vh;
+    }
+    .input{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        width: 100%;
+        *{
+            margin: 2vh;
+        }
+        #ja{
+            margin-top: 1.3vh;
+            background-color: rgb(0, 255, 34);
+            border-radius: 10px;
+            border: 0px;
+            color:rgb(255, 255, 255);
+            padding: 1.3vh;
+            transition: all 200ms ease-in-out;
+            font-size: large;
+            width: 20%;
+            &:hover{
+                transform: scale(1.1);
+            }
+        }
+        #nein{
+            margin-top: 1.3vh;
+            background-color: rgb(255, 0, 0);
+            border-radius: 10px;
+            border: 0px;
+            color:rgb(255, 255, 255);
+            padding: 1.3vh;
+            transition: all 200ms ease-in-out;
+            font-size: large;
+            width: 20%;
+            &:hover{
+                transform: scale(1.1);
+            }
+        }
+    }
+    p{
+        color:rgb(255, 0, 0);
+        font-size: 2.3vh;
+        font-weight: 200;
+    }
+    border: 3px solid;
+}
