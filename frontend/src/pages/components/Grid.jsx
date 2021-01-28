@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 
-function Grid({ userinput, chars, setChars, wort, doResult }) {
+function Grid({ userinput, chars, setChars, wort, doResult, guessed }) {
     const maxChars = 39;
     const items = new Array(maxChars).fill(null);
     let correctness = false;
@@ -47,13 +47,21 @@ function Grid({ userinput, chars, setChars, wort, doResult }) {
                                 <div className="charEmpty" key={id}></div>
                             )
                         } else {
-                            return (
-                                <div className="char" key={id}>{chars[iterator].visible ?
-                                    (<p>{chars[iterator].symbol}</p>)
-                                    :
-                                    (<p></p>)}
-                                </div>
-                            )
+                            if (guessed) {
+                                return (
+                                    <div className="char" key={id}>
+                                        <p>{chars[iterator].symbol}</p>
+                                    </div>
+                                )
+                            } else {
+                                return (
+                                    <div className="char" key={id}>{chars[iterator].visible ?
+                                        (<p>{chars[iterator].symbol}</p>)
+                                        :
+                                        (<p></p>)}
+                                    </div>
+                                )
+                            }
                         }
                     }
                 })}

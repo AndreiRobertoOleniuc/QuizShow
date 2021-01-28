@@ -23,4 +23,10 @@ public class PublicController {
         StartGame newGame = new StartGame(player,wort);
         return newGame;
     }
+    @GetMapping("/getNewWord")
+    @CrossOrigin(origins = "http://localhost:3000")
+    public Wort getNewWord(){
+        Wort wort = sp.getRandWort();
+        return wort;
+    }
 }

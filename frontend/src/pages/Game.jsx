@@ -20,6 +20,7 @@ const Game = ({ inputName, setPlayer, player }) => {
     //Player und Input
     const [input, setInput] = useState(null);
     //Wort und Chars
+    const [wordList, setWordList] = useState([]);
     const [wort, setWort] = useState({});
     const [chars, setChars] = useState([]);
     //Loading
@@ -31,10 +32,21 @@ const Game = ({ inputName, setPlayer, player }) => {
 
     const [chosenChars, setChosenChars] = useState([]);
     const [zuegeCounter, setZuegeCounter] = useState(0);
-    const history = useHistory();
+    const [guessed, setGuessed] = useState(false);
 
     useEffect(() => {
         startGame();
+        return () => {
+            setInput(null);
+            setWordList(null);
+            setWort(null);
+            setChars(null);
+            setGameState(false);
+            setWheelPrize(null);
+            setChosenChars(null);
+            setZuegeCounter(null);
+            setGuessed(false);
+        }
     }, []);
     const startGame = async () => {
         axios.get(`http://localhost:8080/startGame?name=${inputName}`)
@@ -46,6 +58,7 @@ const Game = ({ inputName, setPlayer, player }) => {
                 });
                 setChars(res.data.wort.chars);
                 setLoading(false);
+                setWordList([...wordList, res.data.wort.wort]);
             })
             .catch((err) => {
                 console.error(err);
@@ -53,7 +66,6 @@ const Game = ({ inputName, setPlayer, player }) => {
     }
     const doResult = (res) => {
         if (!input.vowel) {
-            console.log(res);
             if (res === "add") {
                 setPlayer({ ...player, betrag: player.betrag + wheelprize });
             } else if (res === "sub") {
@@ -66,11 +78,31 @@ const Game = ({ inputName, setPlayer, player }) => {
             }
         }
     }
+    const newWord = async () => {
+        axios.get(`http://localhost:8080/getNewWord`)
+            .then((res) => {
+                setWort({
+                    kategorie: res.data.kategorie,
+                    wort: res.data.wort
+                });
+                setChars(res.data.chars);
+                if (wordList.includes(res.data.wort)) {
+                    newWord();
+                } else {
+                    setWordList([...wordList, res.data.wort]);
+                }
+            })
+            .catch((err) => {
+                console.error(err);
+            })
+    }
+    let history = useHistory();
     useEffect(() => {
-        if (player.lebensPunkt === 0) {
+        if (player === null ? null : player.lebensPunkt === 0) {
+            setPlayer(null);
             history.push("/GameOver");
         }
-    }, [player.lebensPunkt]);
+    }, [player === null ? null : player.lebensPunkt === 0]);
     return (
         <FadeInDiv>
             {loading ?
@@ -87,6 +119,7 @@ const Game = ({ inputName, setPlayer, player }) => {
                                 setChars={setChars}
                                 wort={wort}
                                 doResult={doResult}
+                                guessed={guessed}
                             />
                             <div className="controlsAndWheel">
                                 <div className="holder">
@@ -100,6 +133,10 @@ const Game = ({ inputName, setPlayer, player }) => {
                                             wheelprize={wheelprize}
                                             chosenChars={chosenChars}
                                             setChosenChars={setChosenChars}
+                                            wort={wort}
+                                            setGuessed={setGuessed}
+                                            guessed={guessed}
+                                            newWord={newWord}
                                         />
                                     ) : (
                                             <Wheel

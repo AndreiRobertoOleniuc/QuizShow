@@ -4,7 +4,7 @@ import states from "../data/ActionBtnStates";
 import RateVokal from './RateVokal';
 import RateWort from './RateWort';
 
-const Inputs = ({ setInput, player, setPlayer, setGameState, setChosenChars, chosenChars }) => {
+const Inputs = ({ setInput, player, setPlayer, setGameState, setChosenChars, chosenChars, wort, setGuessed, guessed, newWord }) => {
     const alphabet = chars;
     const [vokalMode, setVokalMode] = useState(false);
     const [styling, setStyling] = useState(true);
@@ -33,11 +33,24 @@ const Inputs = ({ setInput, player, setPlayer, setGameState, setChosenChars, cho
         setRateVokalPopup(true);
     }
     const weiterSpielen = () => {
-        setVokalMode(false);
-        setStyling(false);
-        setTimeout(() => {
-            setGameState(false);
-        }, 500);
+        if (guessed) {
+            setGuessed(false);
+            setVokalMode(false);
+            setStyling(false);
+            setTimeout(() => {
+                setGameState(false);
+            }, 500);
+            newWord();
+        } else {
+            setVokalMode(false);
+            setStyling(false);
+            setTimeout(() => {
+                setGameState(false);
+            }, 500);
+        }
+    }
+    const wordGuessed = () => {
+        setGuessed(true);
     }
     return (
         <div className={`inputs ${styling ? 'show' : 'hide'}`}>
@@ -95,7 +108,7 @@ const Inputs = ({ setInput, player, setPlayer, setGameState, setChosenChars, cho
                 <div className={styleActionbtn[0].style} onClick={styleActionbtn[0].btnStyle ? weiterSpielen : null}><button>Weiter Spielen</button></div>
                 <div className={styleActionbtn[1].style} ><button>Aufhören</button></div>
                 <div className={styleActionbtn[2].style} onClick={styleActionbtn[2].btnStyle ? rateVokal : null}><button>Vokal Erraten</button></div>
-                <div className={styleActionbtn[3].style} ><button>Wort Erraten</button></div>
+                <div className={styleActionbtn[3].style} onClick={styleActionbtn[3].btnStyle ? () => { setRateWortPopup(true) } : null}><button>Wort Erraten</button></div>
             </div>
             {rateVokalPopup ? (
                 <RateVokal
@@ -109,7 +122,12 @@ const Inputs = ({ setInput, player, setPlayer, setGameState, setChosenChars, cho
                     null
                 )}
             {rateWortPopup ? (
-                <RateWort />
+                <RateWort
+                    wort={wort}
+                    setRateWortPopup={setRateWortPopup}
+                    wordGuessed={wordGuessed}
+                    setStyleActionbtn={setStyleActionbtn}
+                />
             ) : (null)}
         </div>
     )

@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useEffect } from 'react'
 import {
     BrowserRouter as Router,
     Switch,
@@ -9,6 +9,7 @@ import Game from "./pages/Game";
 import Bankrrot from './pages/messages/Bankrott';
 import LostMessage from "./pages/messages/LostMessage";
 import Startingpoint from './pages/Startingpoint';
+import { useHistory } from "react-router-dom";
 import "./pages/style/style.css";
 
 const App = () => {

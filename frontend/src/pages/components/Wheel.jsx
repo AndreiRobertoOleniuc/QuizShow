@@ -50,8 +50,6 @@ const Wheel = ({ player, setPlayer, setGameState, setWheelPrize }) => {
                     ...player,
                     betrag: 0
                 })
-                console.log(player);
-                history.push("/Bankrrot");
             }
         }, 500);
     }

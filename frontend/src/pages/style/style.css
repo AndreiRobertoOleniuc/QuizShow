@@ -807,6 +807,67 @@
   font-weight: 200;
 }
 
+.wortPopup {
+  position: absolute;
+  width: 40%;
+  height: 30%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: -75vh;
+  margin-left: 21%;
+  background-color: #053885;
+  border-radius: 20px;
+  color: white;
+  border: 3px solid;
+}
+
+.wortPopup * {
+  margin: 2vh;
+}
+
+.wortPopup input {
+  background-color: transparent;
+  border: 0px;
+  border-bottom: 3px solid #104794;
+  padding: 0.5vh;
+  width: 30%;
+  color: white;
+  -webkit-transition: all 200ms ease;
+  transition: all 200ms ease;
+  font-size: medium;
+}
+
+.wortPopup input:focus {
+  border-bottom: 3px solid white;
+}
+
+.wortPopup button {
+  margin-top: 1.3vh;
+  background-color: white;
+  border-radius: 10px;
+  border: 0px;
+  color: black;
+  padding: 1vh;
+  -webkit-transition: all 200ms ease-in-out;
+  transition: all 200ms ease-in-out;
+  font-size: medium;
+}
+
+.wortPopup button:hover {
+  background-color: #c5c5c5;
+}
+
 .entrypoint {
   position: fixed;
   width: 60%;

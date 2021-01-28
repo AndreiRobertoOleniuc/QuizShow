@@ -9,15 +9,25 @@ const AnimatedDiv = styled.div`
     animation: 1000ms ${animation};
 `;
 
-const RateWort = () => {
-    const [notEnoughMoney, setNotEnoughMoney] = useState(false);
+const RateWort = ({ wort, setRateWortPopup, wordGuessed, setStyleActionbtn }) => {
+    const [input, setInput] = useState("");
+    const changeInput = (e) => {
+        setInput(e.target.value)
+    }
+    const checkWord = () => {
+        if (wort.wort === input) {
+            wordGuessed();
+            setRateWortPopup(false);
+            setStyleActionbtn(states[3]);
+        } else {
+            setRateWortPopup(false);
+        }
+    }
     return (
-        <AnimatedDiv className="vokalPopup">
+        <AnimatedDiv className="wortPopup">
             <h1>Welches Wort suchen wir ?</h1>
-
-            {notEnoughMoney ? (
-                <p>Leider hast du nicht genung Geld für den Kauf</p>
-            ) : (null)}
+            <input type="text" onChange={changeInput} />
+            <button onClick={checkWord}>Bestätigen</button>
         </AnimatedDiv>
     )
 }
