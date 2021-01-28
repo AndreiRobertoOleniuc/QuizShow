@@ -29,7 +29,7 @@ const App = () => {
                             player={player}
                         />
                     </Route>
-                    <Route exact path="/Bankrrot">
+                    <Route exact path="/Bankrott">
                         <Bankrrot />
                     </Route>
                     <Route exact path="/GameOver">

@@ -2,6 +2,7 @@ import React, { useState } from 'react'
 import Response from './Response';
 import Frage from "./Frage";
 import ini from "../data/Preise";
+import { useHistory } from "react-router-dom";
 
 const Wheel = ({ player, setPlayer, setGameState, setWheelPrize, frageList, setFrageList }) => {
     //Dreht sich Style
@@ -16,6 +17,7 @@ const Wheel = ({ player, setPlayer, setGameState, setWheelPrize, frageList, setF
     //Preise
     const [prizes, setPrizes] = useState(ini);
     const [showFrage, setShowFrage] = useState(false);
+    let history = useHistory();
     function shuffle(array) {
         return array.sort(() => Math.random() - 0.5);
     }
@@ -52,6 +54,7 @@ const Wheel = ({ player, setPlayer, setGameState, setWheelPrize, frageList, setF
                         ...player,
                         betrag: 0
                     })
+                    history.push("/Bankrott")
                 }
             }, 500);
         }
