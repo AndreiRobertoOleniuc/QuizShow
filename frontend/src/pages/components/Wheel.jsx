@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
 import Response from './Response';
+import Frage from "./Frage";
 import ini from "../data/Preise";
-import { useHistory } from "react-router-dom";
 
-const Wheel = ({ player, setPlayer, setGameState, setWheelPrize }) => {
+const Wheel = ({ player, setPlayer, setGameState, setWheelPrize, frageList, setFrageList }) => {
     //Dreht sich Style
     const [styling, setStyling] = useState(false);
     //Animations Style
@@ -15,9 +15,7 @@ const Wheel = ({ player, setPlayer, setGameState, setWheelPrize }) => {
     const [btnActive, setBtnActive] = useState(true);
     //Preise
     const [prizes, setPrizes] = useState(ini);
-
-    const history = useHistory();
-
+    const [showFrage, setShowFrage] = useState(false);
     function shuffle(array) {
         return array.sort(() => Math.random() - 0.5);
     }
@@ -37,20 +35,35 @@ const Wheel = ({ player, setPlayer, setGameState, setWheelPrize }) => {
             setPrizeShow(true);
         }, 7000);
     };
+    const acceptPrize = () => {
+        if (prizes[6] == "Risiko") {
+            setPrizeShow(false);
+            setShowFrage(true);
+        } else {
+            //Ausblende
+            setStyling2(false);
+            setTimeout(() => {
+                //Preis setzten hauptklasse
+                setWheelPrize(prizes[6]);
+                //Zurück zu dem Inputs
+                setGameState(true);
+                if (prizes[6] == "Bankrott") {
+                    setPlayer({
+                        ...player,
+                        betrag: 0
+                    })
+                }
+            }, 500);
+        }
+    }
     const changeState = () => {
-        //Ausblende
-        setStyling2(false);
+        setStyling2(true);
+        setBtnActive(true);
         setTimeout(() => {
             //Preis setzten hauptklasse
             setWheelPrize(prizes[6]);
             //Zurück zu dem Inputs
-            setGameState(true);
-            if (prizes[6] == "Bankrott") {
-                setPlayer({
-                    ...player,
-                    betrag: 0
-                })
-            }
+            setGameState(false);
         }, 500);
     }
     return (
@@ -73,7 +86,17 @@ const Wheel = ({ player, setPlayer, setGameState, setWheelPrize }) => {
                 <button id={btnActive ? 'spin' : 'nonFunc'} onClick={btnActive ? spin : null}>Spin</button>
             </div>
             {prizeShow ? (
-                <Response res={prize} changeState={changeState} />
+                <Response res={prize} changeState={acceptPrize} />
+            ) : (null)}
+            {showFrage ? (
+                <Frage
+                    player={player}
+                    setPlayer={setPlayer}
+                    changeState={changeState}
+                    setShowFrage={setShowFrage}
+                    frageList={frageList}
+                    setFrageList={setFrageList}
+                />
             ) : (null)}
         </div>
     )

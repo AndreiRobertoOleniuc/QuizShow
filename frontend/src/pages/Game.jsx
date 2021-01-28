@@ -23,6 +23,7 @@ const Game = ({ inputName, setPlayer, player }) => {
     const [wordList, setWordList] = useState([]);
     const [wort, setWort] = useState({});
     const [chars, setChars] = useState([]);
+    const [frageList, setFrageList] = useState([]);
     //Loading
     const [loading, setLoading] = useState(true);
     //Game State
@@ -144,6 +145,8 @@ const Game = ({ inputName, setPlayer, player }) => {
                                                 setWheelPrize={setWheelPrize}
                                                 player={player}
                                                 setPlayer={setPlayer}
+                                                setFrageList={setFrageList}
+                                                frageList={frageList}
                                             />
                                         )}
                                     <SpielInfo

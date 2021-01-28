@@ -33,7 +33,7 @@ public class DatabaseActions {
                     "on woerter.kategorie = kategorie.id;";
             ResultSet rs = st.executeQuery(sql);
             while(rs.next()){
-                woerter.add(new Wort(rs.getString(1),rs.getString(2)));
+                woerter.add(new Wort(rs.getString(2),rs.getString(1)));
             }
             rs.close();
             st.close();

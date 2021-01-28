@@ -735,7 +735,7 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  margin-top: -75vh;
+  margin-top: -82vh;
   margin-left: 21%;
   background-color: #053885;
   border-radius: 20px;
@@ -824,7 +824,7 @@
   -webkit-box-pack: center;
       -ms-flex-pack: center;
           justify-content: center;
-  margin-top: -75vh;
+  margin-top: -82vh;
   margin-left: 21%;
   background-color: #053885;
   border-radius: 20px;
@@ -866,6 +866,226 @@
 
 .wortPopup button:hover {
   background-color: #c5c5c5;
+}
+
+.risiko {
+  position: absolute;
+  width: 40%;
+  height: 30%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: -82vh;
+  margin-left: 21%;
+  background-color: #053885;
+  border-radius: 20px;
+  color: white;
+  border: 3px solid;
+}
+
+.risiko .inputMoney {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.risiko .inputMoney * {
+  margin: 1vh;
+}
+
+.risiko .inputMoney h1 {
+  font-size: 5vh;
+}
+
+.risiko .inputMoney p {
+  font-size: 2vh;
+}
+
+.risiko .inputMoney input {
+  background-color: transparent;
+  border: 0px;
+  border-bottom: 3px solid #104794;
+  padding: 0.5vh;
+  width: 100%;
+  color: white;
+  -webkit-transition: all 200ms ease;
+  transition: all 200ms ease;
+  font-size: medium;
+}
+
+.risiko .inputMoney input:focus {
+  border-bottom: 3px solid white;
+}
+
+.risiko .inputMoney button {
+  -ms-flex-item-align: center;
+      -ms-grid-row-align: center;
+      align-self: center;
+  margin-top: 1.3vh;
+  background-color: white;
+  border-radius: 10px;
+  width: 50%;
+  border: 0px;
+  color: black;
+  padding: 1vh;
+  -webkit-transition: all 200ms ease-in-out;
+  transition: all 200ms ease-in-out;
+  font-size: medium;
+}
+
+.risiko .inputMoney button:hover {
+  background-color: #c5c5c5;
+}
+
+.risiko .inputMoney .warnung {
+  color: red;
+  font-weight: 200;
+}
+
+.risiko .frage {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
+.risiko .frage * {
+  margin: 1vh;
+}
+
+.risiko .frage h1 {
+  font-size: 2.5vh;
+}
+
+.risiko .frage .kategorie {
+  background-color: white;
+  padding: 0.8vh;
+  color: black;
+  border-radius: 10px;
+  font-size: 1.5vh;
+}
+
+.risiko .frage .btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 100%;
+}
+
+.risiko .frage .btn * {
+  margin: 2vh;
+}
+
+.risiko .frage .btn .ja {
+  margin-top: 1.3vh;
+  background-color: #00ff22;
+  border-radius: 10px;
+  border: 0px;
+  color: white;
+  padding: 1vh;
+  -webkit-transition: all 200ms ease-in-out;
+  transition: all 200ms ease-in-out;
+  font-size: medium;
+  width: 20%;
+}
+
+.risiko .frage .btn .ja:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.risiko .frage .btn .nein {
+  margin-top: 1.3vh;
+  background-color: red;
+  border-radius: 10px;
+  border: 0px;
+  color: white;
+  padding: 1vh;
+  -webkit-transition: all 200ms ease-in-out;
+  transition: all 200ms ease-in-out;
+  font-size: medium;
+  width: 20%;
+}
+
+.risiko .frage .btn .nein:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.risiko .frage .abschliessen {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  width: 50%;
+}
+
+.risiko .frage .abschliessen p {
+  color: #00ff0d;
+  font-size: large;
+}
+
+.risiko .frage .abschliessen button {
+  margin-top: 1.3vh;
+  background-color: rgba(255, 255, 255, 0.281);
+  border-radius: 10px;
+  border: 0px;
+  color: white;
+  padding: 1vh;
+  -webkit-transition: all 200ms ease-in-out;
+  transition: all 200ms ease-in-out;
+  font-size: medium;
+  width: 100%;
+}
+
+.risiko .frage .abschliessen button:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
 }
 
 .entrypoint {

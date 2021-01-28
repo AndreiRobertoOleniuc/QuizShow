@@ -69,7 +69,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-top:-75vh;
+    margin-top:-82vh;
     margin-left:21%;
     background-color: rgb(5, 56, 133);
     border-radius: 20px;
@@ -129,7 +129,7 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    margin-top:-75vh;
+    margin-top:-82vh;
     margin-left:21%;
     background-color: rgb(5, 56, 133);
     border-radius: 20px;
@@ -161,6 +161,149 @@
         font-size: medium;
         &:hover{
             background-color: rgb(197, 197, 197); 
+        }
+    }
+    border: 3px solid;
+}
+.risiko{
+    position: absolute;
+    width: 40%;
+    height: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top:-82vh;
+    margin-left:21%;
+    background-color: rgb(5, 56, 133);
+    border-radius: 20px;
+    color:white;
+    .inputMoney{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        *{
+            margin:1vh;
+        }
+        h1{
+            font-size: 5vh;
+        }
+        p{
+            font-size: 2vh;
+        }
+        input{
+            background-color: transparent;
+            border:0px;
+            border-bottom: 3px solid  rgb(16, 71, 148);
+            padding:0.5vh;
+            width: 100%;
+            color:white;
+            transition: all 200ms ease;
+            font-size: medium;
+            &:focus{
+                border-bottom: 3px solid rgb(255, 255, 255);
+            }
+        }
+        button{
+            align-self: center;
+            margin-top: 1.3vh;
+            background-color: rgb(255, 255, 255);
+            border-radius: 10px;
+            width: 50%;
+            border: 0px;
+            color:black;
+            padding: 1vh;
+            transition: all 200ms ease-in-out;
+            font-size: medium;
+            &:hover{
+                background-color: rgb(197, 197, 197); 
+            }
+        }
+        .warnung{
+            color:rgb(255, 0, 0);
+            font-weight: 200;
+        }
+    }
+    .frage{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        *{
+            margin:1vh;
+        }
+        h1{
+            font-size: 2.5vh;
+        }
+        .kategorie{
+            background-color: white;
+            padding:0.8vh;
+            color:black;
+            border-radius: 10px;
+            font-size: 1.5vh;
+        }
+        .btn{
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            width: 100%;
+            *{
+                margin: 2vh;
+            }
+            .ja{
+                margin-top: 1.3vh;
+                background-color: rgb(0, 255, 34);
+                border-radius: 10px;
+                border: 0px;
+                color:rgb(255, 255, 255);
+                padding: 1vh;
+                transition: all 200ms ease-in-out;
+                font-size: medium;
+                width: 20%;
+                &:hover{
+                    transform: scale(1.1);
+                }
+            }
+            .nein{
+                margin-top: 1.3vh;
+                background-color: rgb(255, 0, 0);
+                border-radius: 10px;
+                border: 0px;
+                color:rgb(255, 255, 255);
+                padding: 1vh;
+                transition: all 200ms ease-in-out;
+                font-size: medium;
+                width: 20%;
+                &:hover{
+                    transform: scale(1.1);
+                }
+            }
+        }
+        .abschliessen{
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            width: 50%;
+            p{
+                color:rgb(0, 255, 13);
+                font-size: large;
+            }
+            button{
+                margin-top: 1.3vh;
+                background-color: rgba(255, 255, 255, 0.281);
+                border-radius: 10px;
+                border: 0px;
+                color:rgb(255, 255, 255);
+                padding: 1vh;
+                transition: all 200ms ease-in-out;
+                font-size: medium;
+                width: 100%;
+                &:hover{
+                    transform: scale(1.1);
+                }
+            }
         }
     }
     border: 3px solid;
