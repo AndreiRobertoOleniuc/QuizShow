@@ -3,11 +3,11 @@ package ch.bbbaden.Models;
 import java.util.ArrayList;
 
 public class Wort {
-    private Kategorien kategorie;
+    private String kategorie;
     private String wort;
     private ArrayList<Chars> chars;
 
-    public Wort(Kategorien kategorie, String wort) {
+    public Wort(String kategorie, String wort) {
         this.kategorie = kategorie;
         this.wort = wort;
     }
@@ -16,7 +16,7 @@ public class Wort {
         return wort;
     }
 
-    public Kategorien getKategorie() {
+    public String getKategorie() {
         return kategorie;
     }
 

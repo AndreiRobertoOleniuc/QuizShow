@@ -3,21 +3,21 @@ package ch.bbbaden.Database;
 import java.sql.DriverManager;
 import java.sql.SQLException;
 
-public class Connection {
-    private static Connection instance = null;
+public class ConnectionDB {
+    private static ConnectionDB instance = null;
     private final String USERNAME = "root";
     private final String PASSWORD = "";
     private final String DB_CONNECTION_STRING = "jdbc:mysql://localhost/wheeloffortune";
     private final String DRIVER = "com.mysql.cj.jdbc.Driver";
     private java.sql.Connection cn = null;
 
-    private Connection() {
+    private ConnectionDB() {
 
     }
 
-    public static Connection getInstance() {
+    public static ConnectionDB getInstance() {
         if (instance == null) {
-            instance = new Connection();
+            instance = new ConnectionDB();
         }
         return instance;
     }

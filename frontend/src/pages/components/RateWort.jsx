@@ -1,9 +1,9 @@
 import React, { useState } from 'react';
 import states from "../data/ActionBtnStates";
 import styled, { keyframes } from 'styled-components';
-import { rotateIn } from "react-animations";
+import { slideInUp } from "react-animations";
 
-const animation = keyframes`${rotateIn}`;
+const animation = keyframes`${slideInUp}`;
 
 const AnimatedDiv = styled.div`
     animation: 1000ms ${animation};
