@@ -13,7 +13,7 @@ const RateVokal = ({ player, setPlayer, setRateVokalPopup, setVokalMode, setStyl
     const [notEnoughMoney, setNotEnoughMoney] = useState(false);
     const ja = () => {
         if (player.betrag > 500) {
-            setPlayer({ ...player, betrag: player.betrag - 200 })
+            setPlayer({ ...player, betrag: player.betrag - 500 })
             setVokalMode(true);
             setRateVokalPopup(false);
             setStyleActionbtn(states[2]);

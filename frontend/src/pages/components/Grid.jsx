@@ -6,13 +6,13 @@ function Grid({ userinput, chars, setChars, wort, doResult }) {
     let correctness = false;
     let iterator = -1;
     useEffect(() => {
-        checkBuchStabe(userinput);
+        checkBuchStabe();
     }, [userinput]);
     const checkBuchStabe = () => {
         if (userinput == null) { }
         else {
             setChars(chars.map((item) => {
-                if (userinput.toUpperCase() === item.symbol.toUpperCase()) {
+                if (userinput.char.toUpperCase() === item.symbol.toUpperCase()) {
                     correctness = true;
                     return {
                         ...item,

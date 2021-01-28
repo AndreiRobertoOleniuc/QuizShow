@@ -52,13 +52,19 @@ const Game = ({ inputName, setPlayer, player }) => {
             })
     }
     const doResult = (res) => {
-        console.log(res);
-        if (res === "add") {
-            setPlayer({ ...player, betrag: player.betrag + wheelprize });
-        } else if (res === "sub") {
-            setPlayer({ ...player, lebensPunkt: player.lebensPunkt - 1 })
+        if (!input.vowel) {
+            console.log(res);
+            if (res === "add") {
+                setPlayer({ ...player, betrag: player.betrag + wheelprize });
+            } else if (res === "sub") {
+                setPlayer({ ...player, lebensPunkt: player.lebensPunkt - 1 })
+            }
+            setZuegeCounter(zuegeCounter + 1);
+        } else {
+            if (res === "sub") {
+                setPlayer({ ...player, lebensPunkt: player.lebensPunkt - 1 })
+            }
         }
-        setZuegeCounter(zuegeCounter + 1);
     }
     useEffect(() => {
         if (player.lebensPunkt === 0) {

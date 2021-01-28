@@ -2,19 +2,32 @@ import React, { useEffect, useState } from 'react'
 import chars from "../data/Chars";
 import states from "../data/ActionBtnStates";
 import RateVokal from './RateVokal';
+import RateWort from './RateWort';
 
 const Inputs = ({ setInput, player, setPlayer, setGameState, setChosenChars, chosenChars }) => {
     const alphabet = chars;
     const [vokalMode, setVokalMode] = useState(false);
     const [styling, setStyling] = useState(true);
     const [allowCharInput, setAllowCharInput] = useState(true);
+    const [allowVokalInput, setAllowVokalInput] = useState(true);
     const [styleActionbtn, setStyleActionbtn] = useState(states[0]);
     const [rateVokalPopup, setRateVokalPopup] = useState(false);
+    const [rateWortPopup, setRateWortPopup] = useState(false);
+
     var searchWord = (e) => {
-        setInput(e.target.id);
+        let vowelList = 'AEIOUaeiou'
+        if (vowelList.includes(e.target.id)) {
+            setInput({ char: e.target.id, vowel: true })
+        } else {
+            setInput({ char: e.target.id, vowel: false })
+        }
         setChosenChars([...chosenChars, e.target.id]);
         setAllowCharInput(false);
-        setStyleActionbtn(states[1])
+        setStyleActionbtn(states[1]);
+        if (!allowCharInput) {
+            setAllowVokalInput(false);
+            setStyleActionbtn(states[2]);
+        }
     };
     const rateVokal = () => {
         setRateVokalPopup(true);
@@ -31,8 +44,8 @@ const Inputs = ({ setInput, player, setPlayer, setGameState, setChosenChars, cho
             <div className="charBox">
                 {alphabet.map((item) => {
                     let vowelList = 'AEIOUaeiou'
-                    if (allowCharInput) {
-                        if (vokalMode) {
+                    if (vokalMode) {
+                        if (allowVokalInput) {
                             if (vowelList.indexOf(item) !== -1) {
                                 if (chosenChars.includes(item)) {
                                     return (
@@ -49,6 +62,12 @@ const Inputs = ({ setInput, player, setPlayer, setGameState, setChosenChars, cho
                                 )
                             }
                         } else {
+                            return (
+                                <button className="nonWorking" key={item} id={item} onClick={null}>{item}</button>
+                            )
+                        }
+                    } else {
+                        if (allowCharInput) {
                             if (vowelList.indexOf(item) !== -1) {
                                 return (
                                     <button className="nonWorking" key={item} id={item} onClick={null}>{item}</button>
@@ -64,11 +83,11 @@ const Inputs = ({ setInput, player, setPlayer, setGameState, setChosenChars, cho
                                     )
                                 }
                             }
+                        } else {
+                            return (
+                                <button className="nonWorking" key={item} id={item} onClick={null}>{item}</button>
+                            )
                         }
-                    } else {
-                        return (
-                            <button className="nonWorking" key={item} id={item} onClick={null}>{item}</button>
-                        )
                     }
                 })}
             </div>
@@ -89,6 +108,9 @@ const Inputs = ({ setInput, player, setPlayer, setGameState, setChosenChars, cho
             ) : (
                     null
                 )}
+            {rateWortPopup ? (
+                <RateWort />
+            ) : (null)}
         </div>
     )
 }
