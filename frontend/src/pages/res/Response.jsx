@@ -18,7 +18,7 @@ function Response({ player, anzahlRunden }) {
         getData();
     }, []);
     const getData = async () => {
-        axios.post("http://localhost:8080/saveGame", {
+        axios.post("http://localhost:8080/api/public/saveGame", {
             name: player.name,
             betrag: player.betrag,
             anzahlrunden: anzahlRunden

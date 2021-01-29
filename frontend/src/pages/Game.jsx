@@ -50,7 +50,7 @@ const Game = ({ inputName, setPlayer, player, anzahlRunden, setAnzahlRunden }) =
         }
     }, []);
     const startGame = async () => {
-        axios.get(`http://localhost:8080/startGame?name=${inputName}`)
+        axios.get(`http://localhost:8080/api/public/startGame?name=${inputName}`)
             .then((res) => {
                 setPlayer(res.data.player);
                 setWort({
@@ -79,7 +79,7 @@ const Game = ({ inputName, setPlayer, player, anzahlRunden, setAnzahlRunden }) =
         }
     }
     const newWord = async () => {
-        axios.get(`http://localhost:8080/getNewWord`)
+        axios.get(`http://localhost:8080/api/public/getNewWord`)
             .then((res) => {
                 setWort({
                     kategorie: res.data.kategorie,

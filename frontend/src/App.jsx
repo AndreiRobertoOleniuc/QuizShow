@@ -12,11 +12,15 @@ import Startingpoint from './pages/Startingpoint';
 import "./pages/style/style.css";
 import Response from './pages/res/Response';
 import Rangliste from './pages/res/Rangliste';
-
+import PrivateRoutes from "./auth/PrivateRoute";
+import Admin from './admin/Admin';
+import Login from "./auth/LoginPage";
 const App = () => {
     const [inputName, setInputName] = useState("");
     const [player, setPlayer] = useState({});
     const [anzahlRunden, setAnzahlRunden] = useState(1);
+    const [userName, setUserName] = useState("");
+    const [password, setPassword] = useState("");
     return (
         <div className="app">
             <Router>
@@ -38,6 +42,12 @@ const App = () => {
                             player={player}
                             anzahlRunden={anzahlRunden}
                         />
+                    </Route>
+                    <PrivateRoutes exact path="/Admin">
+                        <Admin userName={userName} password={password} />
+                    </PrivateRoutes>
+                    <Route path="/Login">
+                        <Login setUserName={setUserName} setPassword={setPassword} />
                     </Route>
                     <Route exact path="/RangListe">
                         <Rangliste />

@@ -9,8 +9,8 @@ const ZoomInDiv = styled.div`
     animation: 1200ms ${animation};
 `;
 
-
 function Startingpoint({ setInputName }) {
+    //URL History und URL momentan
     let history = useHistory();
     const [input, setInput] = useState("");
     const changeInput = (e) => {

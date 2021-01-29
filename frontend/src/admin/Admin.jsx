@@ -2,7 +2,7 @@
 import React from 'react';
 import "./style/Admin.css";
 import Navbar from "./components/Navbar";
-import RangListe from "./pages/ActivityLog";
+import RangListe from "./pages/RangListe";
 import Dashboard from "./pages/Dashboard";
 import {
     BrowserRouter as Router,

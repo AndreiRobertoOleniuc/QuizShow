@@ -20,7 +20,7 @@ export default function Navbar() {
                 <div className="navbar" >
                     <Link to="#" className="menu-bars" >
                         <FaIcons.FaBars onClick={showSidebar} size={23} color="black" /></Link>
-                    <h1>Administrator Kanti Baden</h1>
+                    <h1>Administrator</h1>
                 </div>
                 <nav className={sidebar ? "nav-menu active" : "nav-menu"} >
                     <ul className="nav-menu-items" onClick={showSidebar} >
@@ -38,7 +38,7 @@ export default function Navbar() {
                         <li className="nav-text">
                             <Link to="/admin/log">
                                 <FiIcons.FiActivity color="black" />
-                                <span>Aktivitätslog</span>
+                                <span>Rangliste</span>
                             </Link>
                         </li>
                     </ul>

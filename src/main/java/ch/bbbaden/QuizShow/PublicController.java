@@ -13,7 +13,7 @@ public class PublicController {
 
     }
 
-    @GetMapping("/startGame")
+    @GetMapping("/api/public/startGame")
     @CrossOrigin(origins = "http://localhost:3000")
     public StartGame startGame(@RequestParam(value = "name",defaultValue = "0") String name) throws SQLException, ClassNotFoundException {
         Spieler player = new Spieler(600,name,3);
@@ -21,24 +21,32 @@ public class PublicController {
         StartGame newGame = new StartGame(player,wort);
         return newGame;
     }
-    @GetMapping("/getNewWord")
+    @GetMapping("/api/public/getNewWord")
     @CrossOrigin(origins = "http://localhost:3000")
     public Wort getNewWord() throws SQLException, ClassNotFoundException {
         return new DatabaseActions().getRandWort();
     }
-    @GetMapping("/getNewFrage")
+    @GetMapping("/api/public/getNewFrage")
     @CrossOrigin(origins = "http://localhost:3000")
     public Frage getNewFrage() throws SQLException, ClassNotFoundException {
         return new DatabaseActions().getRandFrage();
     }
-    @PostMapping("/saveGame")
+    @PostMapping("/api/public/saveGame")
     @CrossOrigin(origins = "http://localhost:3000")
     public RanglistOutput getErg(@RequestBody RanglistInputs input) throws SQLException, ClassNotFoundException {
         return new DatabaseActions().saveGameandGetGame(input);
     }
-    @GetMapping("/getRangliste")
+    @GetMapping("/api/public/getRangliste")
     @CrossOrigin(origins = "http://localhost:3000")
     public ArrayList<RanglistOutput> getRangliste() throws SQLException, ClassNotFoundException {
         return new DatabaseActions().getRangListe();
+    }
+    @GetMapping("/api/public/login")
+    @CrossOrigin(origins = "http://localhost:3000")
+    public boolean login(@RequestParam(value = "username", defaultValue = "0") String username,@RequestParam(value = "password", defaultValue = "0") String password){
+        if(username.equals("admin")&&password.equals("12345")){
+            return true;
+        }
+        return false;
     }
 }
