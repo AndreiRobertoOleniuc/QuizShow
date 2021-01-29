@@ -37,17 +37,6 @@ const Game = ({ inputName, setPlayer, player, anzahlRunden, setAnzahlRunden }) =
 
     useEffect(() => {
         startGame();
-        return () => {
-            setInput(null);
-            setWordList(null);
-            setWort(null);
-            setChars(null);
-            setGameState(false);
-            setWheelPrize(null);
-            setChosenChars(null);
-            setAnzahlRunden(0);
-            setGuessed(false);
-        }
     }, []);
     const startGame = async () => {
         axios.get(`http://localhost:8080/api/public/startGame?name=${inputName}`)

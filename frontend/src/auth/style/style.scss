@@ -58,7 +58,7 @@ $textcolor: white;
                     box-shadow: 5px 5px 0px 0 rgb(165, 165, 165);
                 }
             }
-            button {
+            .logOn {
                 margin-top: 3vh;
                 width: 15%;
                 height: 5vh;
@@ -67,6 +67,23 @@ $textcolor: white;
                 font-size: 2vh;
                 padding: 9px 25px;
                 background-color: rgb(18, 96, 160); 
+                border: none;
+                border-radius: 50px;
+                cursor: pointer;
+                transition: transform ease 500ms;
+                &:hover {
+                    transform: scale(1.1);
+                }
+            }
+            .goBack{
+                margin-top: 3vh;
+                width: 10%;
+                height: 4vh;
+                color: $textcolor;
+                font-weight: 500;
+                font-size: small;
+                padding: 1vh;
+                background-color: rgba(18, 96, 160, 0.568); 
                 border: none;
                 border-radius: 50px;
                 cursor: pointer;

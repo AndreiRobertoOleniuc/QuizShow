@@ -11,7 +11,7 @@ export default function ActivityLog({ userName, password }) {
                     <h1>Rangliste</h1>
                 </div>
                 <div className="contentInfo1">
-
+                    
                 </div>
             </div>
         </div>

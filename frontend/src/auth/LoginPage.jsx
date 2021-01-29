@@ -32,6 +32,9 @@ export default function LoginPage({ setUserName, setPassword }) {
     setUserName(username);
     setPassword(password);
   };
+  const goBack = () => {
+    history.push("/");
+  }
   //Anzeige
   return (
     <div className="loginAdmin">
@@ -39,7 +42,7 @@ export default function LoginPage({ setUserName, setPassword }) {
         <div className="login">
           <h1>Admin Login</h1>
           <p>
-            Geben Sie bitte Ihre Benutzerdaten ein um den EignungsTest durchzuführen
+            Geben Sie bitte Ihre Benutzerdaten ein um auf die Admin Page zu kommen
           </p>
           <br />
           <input
@@ -58,7 +61,8 @@ export default function LoginPage({ setUserName, setPassword }) {
             onChange={changepassword}
           />
           <br />
-          <button onClick={login}>Einloggen</button>
+          <button className="logOn" onClick={login}>Einloggen</button>
+          <button className="goBack" onClick={goBack}>Zurück</button>
         </div>
       </div>
     </div>

@@ -17,15 +17,23 @@ function Startingpoint({ setInputName }) {
         setInput(e.target.value)
     }
     const startGame = () => {
-        setInputName(input);
-        history.push("/Game");
+        if (input === "") {
+            alert("Bitte geben Sie einen Namen ein");
+        } else {
+            setInputName(input);
+            history.push("/Game");
+        }
+    }
+    const goToLogin = () => {
+        history.push("/Admin")
     }
     return (
         <div className="center">
             <ZoomInDiv className="entrypoint">
                 <p>Wheel of Fortune</p>
                 <input type="text" name="Inputs" placeholder="Dein Name" onChange={changeInput} />
-                <button onClick={startGame}>Starte Spiel</button>
+                <button className="start" onClick={startGame}>Starte Spiel</button>
+                <button className="toLogin" onClick={goToLogin}>Zum Login</button>
             </ZoomInDiv>
         </div>
     )
