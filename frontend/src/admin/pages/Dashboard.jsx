@@ -35,9 +35,6 @@ export default function Dashboard({ userName, password }) {
                 console.log(err);
             })
     }
-    const edit = (e) => {
-        setPopUp(<EditWord wort={e.target.value} setPopUp={setPopUp} refresh={refresh} />)
-    }
     const deleteit = async (e) => {
         axios.delete(`http://localhost:8080/api/public/deleteWord?word=${e.target.value}`)
             .then((res) => {
@@ -48,6 +45,22 @@ export default function Dashboard({ userName, password }) {
             .catch((err) => {
                 console.log(err);
             })
+    }
+    const deleteitFrage = async (e) => {
+        axios.delete(`http://localhost:8080/api/public/deleteFrage?frage=${e.target.value}`)
+            .then((res) => {
+                setTimeout(() => {
+                    refresh();
+                }, [500]);
+            })
+            .catch((err) => {
+                console.log(err);
+            })
+    }
+    const editFrage = (e) => {
+    }
+    const edit = (e) => {
+        setPopUp(<EditWord wort={e.target.value} setPopUp={setPopUp} refresh={refresh} />)
     }
     useEffect(() => {
         refresh();
@@ -100,7 +113,30 @@ export default function Dashboard({ userName, password }) {
                                 </tbody>
                             </table>
                         </div>
-                        <div className="frageTable"></div>
+                        <div className="frageTable">
+                            <table className="fragen">
+                                <thead>
+                                    <tr>
+                                        <th align="left">Frage</th>
+                                        <th align="left">Kategorie</th>
+                                        <th align="left">Antwort</th>
+                                        <th align="left">Edit</th>
+                                        <th align="left">Delete</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {fragen.map((item, id) => (
+                                        <tr key={id}>
+                                            <td>{item.frage}</td>
+                                            <td>{item.kategorie}</td>
+                                            <td>{item.antwort ? "Ja" : "Nein"}</td>
+                                            <td><button className="edit" value={item.frage} onClick={editFrage}>Edit</button></td>
+                                            <td><button className="delete" value={item.frage} onClick={deleteitFrage}>Delete</button></td>
+                                        </tr>
+                                    ))}
+                                </tbody>
+                            </table>
+                        </div>
                     </div>
                 </div>
             </div>

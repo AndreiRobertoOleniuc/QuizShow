@@ -543,6 +543,62 @@ span {
           box-shadow: 0px 0px 10px 0 rgba(0, 0, 0, 0.2);
 }
 
+.content .plate .content .content2 .frageTable .fragen {
+  color: black;
+  padding: 2vh;
+  border-radius: 10px;
+  width: 100%;
+  overflow-y: scroll;
+  height: 25vh;
+  display: block;
+}
+
+.content .plate .content .content2 .frageTable .fragen th {
+  font-size: large;
+}
+
+.content .plate .content .content2 .frageTable .fragen th,
+.content .plate .content .content2 .frageTable .fragen td {
+  width: 20%;
+  text-align: center;
+  border-bottom: 2px black solid;
+  padding: 5px;
+}
+
+.content .plate .content .content2 .frageTable .fragen .edit {
+  background-color: orange;
+  border-radius: 10px;
+  border: 0px;
+  color: white;
+  padding: 1.3vh;
+  -webkit-transition: all 200ms ease-in-out;
+  transition: all 200ms ease-in-out;
+  font-size: medium;
+  width: 60%;
+}
+
+.content .plate .content .content2 .frageTable .fragen .edit:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.content .plate .content .content2 .frageTable .fragen .delete {
+  background-color: #bd0000;
+  border-radius: 10px;
+  border: 0px;
+  color: white;
+  padding: 1.3vh;
+  -webkit-transition: all 200ms ease-in-out;
+  transition: all 200ms ease-in-out;
+  font-size: medium;
+  width: 60%;
+}
+
+.content .plate .content .content2 .frageTable .fragen .delete:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
 .addKategorie {
   position: absolute;
   width: 40%;
