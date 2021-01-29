@@ -1,0 +1,44 @@
+.addWort{
+    position: absolute;
+    width: 40%;
+    height: 30%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top:-82vh;
+    margin-left:21%;
+    background-color: rgb(5, 56, 133);
+    border-radius: 20px;
+    color:white;
+    *{
+        margin: 2vh;
+    }
+    input{
+        background-color: transparent;
+        border:0px;
+        border-bottom: 3px solid  rgb(16, 71, 148);
+        padding:0.5vh;
+        width: 30%;
+        color:white;
+        transition: all 200ms ease;
+        font-size: medium;
+        &:focus{
+            border-bottom: 3px solid rgb(255, 255, 255);
+        }
+    }
+    button{
+        margin-top: 1.3vh;
+        background-color: rgb(255, 255, 255);
+        border-radius: 10px;
+        border: 0px;
+        color:black;
+        padding: 1vh;
+        transition: all 200ms ease-in-out;
+        font-size: medium;
+        &:hover{
+            background-color: rgb(197, 197, 197); 
+        }
+    }
+    border: 3px solid;
+}
