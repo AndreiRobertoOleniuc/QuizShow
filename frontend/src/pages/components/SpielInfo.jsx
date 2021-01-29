@@ -16,7 +16,7 @@ function SpielInfo({ player, anzahlRunden }) {
                 </div>
                 <div className="züge">
                     <p className="text">
-                        Züge: {anzahlRunden}
+                        Runde: {anzahlRunden}
                     </p>
                 </div>
             </div>
