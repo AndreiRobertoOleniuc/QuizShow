@@ -18,16 +18,30 @@
     p{
         font-size: 3vh;
     }
-    button{
-        margin-top: 1.3vh;
-        background-color: rgb(255, 255, 255);
+    table{
+        padding:2vh;
+        background-color: rgba(255, 255, 255, 0.377);
+        color:rgb(255, 255, 255);
         border-radius: 10px;
-        border: 0px;
-        color:black;
-        padding: 1.3vh;
-        transition: all 200ms ease-in-out;
-        &:hover{
-            background-color: rgb(197, 197, 197); 
+        width: 80%;
+    }
+    .controls{
+        margin-top: 2vh;
+        display: flex;
+        flex-direction: row;
+        justify-content: space-around;
+        width: 30%;
+        button{
+            margin-top: 1.3vh;
+            background-color: rgb(255, 255, 255);
+            border-radius: 10px;
+            border: 0px;
+            color:black;
+            padding: 1.3vh;
+            transition: all 200ms ease-in-out;
+            &:hover{
+                background-color: rgb(197, 197, 197); 
+            }
         }
     }
     border: 3px solid;

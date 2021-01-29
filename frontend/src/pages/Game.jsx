@@ -16,7 +16,7 @@ const FadeInDiv = styled.div`
     animation: 1000ms ${fade};
 `;
 
-const Game = ({ inputName, setPlayer, player }) => {
+const Game = ({ inputName, setPlayer, player, anzahlRunden, setAnzahlRunden }) => {
     //Player und Input
     const [input, setInput] = useState(null);
     //Wort und Chars
@@ -32,8 +32,8 @@ const Game = ({ inputName, setPlayer, player }) => {
     const [wheelprize, setWheelPrize] = useState();
 
     const [chosenChars, setChosenChars] = useState([]);
-    const [zuegeCounter, setZuegeCounter] = useState(0);
     const [guessed, setGuessed] = useState(false);
+    let history = useHistory();
 
     useEffect(() => {
         startGame();
@@ -45,7 +45,7 @@ const Game = ({ inputName, setPlayer, player }) => {
             setGameState(false);
             setWheelPrize(null);
             setChosenChars(null);
-            setZuegeCounter(null);
+            setAnzahlRunden(0);
             setGuessed(false);
         }
     }, []);
@@ -72,7 +72,6 @@ const Game = ({ inputName, setPlayer, player }) => {
             } else if (res === "sub") {
                 setPlayer({ ...player, lebensPunkt: player.lebensPunkt - 1 })
             }
-            setZuegeCounter(zuegeCounter + 1);
         } else {
             if (res === "sub") {
                 setPlayer({ ...player, lebensPunkt: player.lebensPunkt - 1 })
@@ -90,6 +89,7 @@ const Game = ({ inputName, setPlayer, player }) => {
                 if (wordList.includes(res.data.wort)) {
                     newWord();
                 } else {
+                    setAnzahlRunden(anzahlRunden + 1);
                     setWordList([...wordList, res.data.wort]);
                 }
             })
@@ -97,7 +97,6 @@ const Game = ({ inputName, setPlayer, player }) => {
                 console.error(err);
             })
     }
-    let history = useHistory();
     useEffect(() => {
         if (player === null ? null : player.lebensPunkt === 0) {
             setPlayer(null);
@@ -151,7 +150,7 @@ const Game = ({ inputName, setPlayer, player }) => {
                                         )}
                                     <SpielInfo
                                         player={player}
-                                        zuegeCounter={zuegeCounter}
+                                        anzahlRunden={anzahlRunden}
                                     />
                                 </div>
                             </div>

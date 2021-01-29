@@ -1,6 +1,6 @@
 import React from 'react'
 
-function SpielInfo({ player, zuegeCounter }) {
+function SpielInfo({ player, anzahlRunden }) {
     return (
         <div className="spielerInfo">
             <div className="plate">
@@ -16,7 +16,7 @@ function SpielInfo({ player, zuegeCounter }) {
                 </div>
                 <div className="züge">
                     <p className="text">
-                        Züge: {zuegeCounter}
+                        Züge: {anzahlRunden}
                     </p>
                 </div>
             </div>

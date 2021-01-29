@@ -9,12 +9,14 @@ import Game from "./pages/Game";
 import Bankrrot from './pages/messages/Bankrott';
 import LostMessage from "./pages/messages/LostMessage";
 import Startingpoint from './pages/Startingpoint';
-import { useHistory } from "react-router-dom";
 import "./pages/style/style.css";
+import Response from './pages/res/Response';
+import Rangliste from './pages/res/Rangliste';
 
 const App = () => {
     const [inputName, setInputName] = useState("");
     const [player, setPlayer] = useState({});
+    const [anzahlRunden, setAnzahlRunden] = useState(1);
     return (
         <div className="app">
             <Router>
@@ -27,7 +29,18 @@ const App = () => {
                             inputName={inputName}
                             setPlayer={setPlayer}
                             player={player}
+                            anzahlRunden={anzahlRunden}
+                            setAnzahlRunden={setAnzahlRunden}
                         />
+                    </Route>
+                    <Route exact path="/Response">
+                        <Response
+                            player={player}
+                            anzahlRunden={anzahlRunden}
+                        />
+                    </Route>
+                    <Route exact path="/RangListe">
+                        <Rangliste />
                     </Route>
                     <Route exact path="/Bankrott">
                         <Bankrrot />

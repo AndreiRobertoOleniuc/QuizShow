@@ -3,6 +3,7 @@ import chars from "../data/Chars";
 import states from "../data/ActionBtnStates";
 import RateVokal from './RateVokal';
 import RateWort from './RateWort';
+import { useHistory } from "react-router-dom";
 
 const Inputs = ({ setInput, player, setPlayer, setGameState, setChosenChars, chosenChars, wort, setGuessed, guessed, newWord }) => {
     const alphabet = chars;
@@ -13,6 +14,7 @@ const Inputs = ({ setInput, player, setPlayer, setGameState, setChosenChars, cho
     const [styleActionbtn, setStyleActionbtn] = useState(states[0]);
     const [rateVokalPopup, setRateVokalPopup] = useState(false);
     const [rateWortPopup, setRateWortPopup] = useState(false);
+    let history = useHistory();
 
     var searchWord = (e) => {
         let vowelList = 'AEIOUaeiou'
@@ -48,6 +50,9 @@ const Inputs = ({ setInput, player, setPlayer, setGameState, setChosenChars, cho
                 setGameState(false);
             }, 500);
         }
+    }
+    const finishGame = () => {
+        history.push("/Response")
     }
     const wordGuessed = () => {
         setGuessed(true);
@@ -106,7 +111,7 @@ const Inputs = ({ setInput, player, setPlayer, setGameState, setChosenChars, cho
             </div>
             <div className="buttonsActionen">
                 <div className={styleActionbtn[0].style} onClick={styleActionbtn[0].btnStyle ? weiterSpielen : null}><button>Weiter Spielen</button></div>
-                <div className={styleActionbtn[1].style} ><button>Aufhören</button></div>
+                <div className={styleActionbtn[1].style} onClick={styleActionbtn[1].btnStyle ? finishGame : null}><button>Aufhören</button></div>
                 <div className={styleActionbtn[2].style} onClick={styleActionbtn[2].btnStyle ? rateVokal : null}><button>Vokal Erraten</button></div>
                 <div className={styleActionbtn[3].style} onClick={styleActionbtn[3].btnStyle ? () => { setRateWortPopup(true) } : null}><button>Wort Erraten</button></div>
             </div>
