@@ -56,6 +56,7 @@ public class PublicController {
     public ArrayList<String> login() throws SQLException, ClassNotFoundException {
         return new DatabaseActions().getKategorien();
     }
+    //ADD
     @PostMapping("/api/public/addKategorie")
     @CrossOrigin(origins = "http://localhost:3000")
     public boolean addKategorie(@RequestParam(value = "kategorie", defaultValue = "0") String kategorie) throws SQLException, ClassNotFoundException {
@@ -71,6 +72,7 @@ public class PublicController {
     public boolean addFrage(@RequestParam(value = "frage", defaultValue = "0") String frage,@RequestParam(value = "kategorie", defaultValue = "0") String kategorie,@RequestParam(value = "antwort") boolean antwort) throws SQLException, ClassNotFoundException {
         return new DatabaseActions().newFrage(frage,kategorie,antwort);
     }
+    //GET
     @GetMapping("/api/public/getWoerter")
     @CrossOrigin(origins = "http://localhost:3000")
     public ArrayList<Wort> getWoerter() throws SQLException, ClassNotFoundException {
@@ -80,6 +82,30 @@ public class PublicController {
     @CrossOrigin(origins = "http://localhost:3000")
     public ArrayList<Frage> getFragen() throws SQLException, ClassNotFoundException {
         return new DatabaseActions().getFragen();
+    }
+
+    //DELETE
+    @DeleteMapping("/api/public/deleteWord")
+    @CrossOrigin(origins = "http://localhost:3000")
+    public boolean deleteWord(@RequestParam(value = "word", defaultValue = "0") String word) throws SQLException, ClassNotFoundException {
+        return new DatabaseActions().deleteWord(word);
+    }
+    @DeleteMapping("/api/public/deleteFrage")
+    @CrossOrigin(origins = "http://localhost:3000")
+    public boolean deleteFrage(@RequestParam(value = "frage", defaultValue = "0") String frage) throws SQLException, ClassNotFoundException {
+        return new DatabaseActions().deleteFrage(frage);
+    }
+
+    //EDIT
+    @GetMapping("/api/public/getSpecWord")
+    @CrossOrigin(origins = "http://localhost:3000")
+    public Wort getSpecWord(@RequestParam(value = "wort", defaultValue = "0") String word) throws SQLException, ClassNotFoundException {
+        return new DatabaseActions().getSpecWord(word);
+    }
+    @PostMapping("/api/public/editWord")
+    @CrossOrigin(origins = "http://localhost:3000")
+    public boolean editWord(@RequestParam(value = "word", defaultValue = "0") String word,@RequestParam(value = "kategorie", defaultValue = "0") String kategorie) throws SQLException, ClassNotFoundException {
+        return new DatabaseActions().editWord(word,kategorie);
     }
     //////////////////////////////////////////////////////////////////////////////////////////////////////////////////////////
 }

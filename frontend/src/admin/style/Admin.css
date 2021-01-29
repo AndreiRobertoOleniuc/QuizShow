@@ -463,6 +463,62 @@ span {
           box-shadow: 0px 0px 10px 0 rgba(0, 0, 0, 0.2);
 }
 
+.content .plate .content .content2 .worterTable .woerter {
+  color: black;
+  padding: 2vh;
+  border-radius: 10px;
+  width: 100%;
+  overflow-y: scroll;
+  height: 25vh;
+  display: block;
+}
+
+.content .plate .content .content2 .worterTable .woerter th {
+  font-size: large;
+}
+
+.content .plate .content .content2 .worterTable .woerter th,
+.content .plate .content .content2 .worterTable .woerter td {
+  width: 20%;
+  text-align: center;
+  border-bottom: 2px black solid;
+  padding: 5px;
+}
+
+.content .plate .content .content2 .worterTable .woerter .edit {
+  background-color: orange;
+  border-radius: 10px;
+  border: 0px;
+  color: white;
+  padding: 1.3vh;
+  -webkit-transition: all 200ms ease-in-out;
+  transition: all 200ms ease-in-out;
+  font-size: medium;
+  width: 60%;
+}
+
+.content .plate .content .content2 .worterTable .woerter .edit:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
+.content .plate .content .content2 .worterTable .woerter .delete {
+  background-color: #bd0000;
+  border-radius: 10px;
+  border: 0px;
+  color: white;
+  padding: 1.3vh;
+  -webkit-transition: all 200ms ease-in-out;
+  transition: all 200ms ease-in-out;
+  font-size: medium;
+  width: 60%;
+}
+
+.content .plate .content .content2 .worterTable .woerter .delete:hover {
+  -webkit-transform: scale(1.1);
+          transform: scale(1.1);
+}
+
 .content .plate .content .content2 .frageTable {
   border-radius: 10px;
   background-color: #F2F5FA;
@@ -692,6 +748,84 @@ span {
 }
 
 .addFrage .choiceboxes {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.editWort {
+  position: absolute;
+  width: 40%;
+  height: 30%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  margin-top: 25vh;
+  background-color: white;
+  border-radius: 20px;
+  color: black;
+  border: 3px solid black;
+}
+
+.editWort * {
+  margin: 1vh;
+}
+
+.editWort input {
+  background-color: transparent;
+  border: 0px;
+  border-bottom: 3px solid rgba(255, 0, 0, 0.425);
+  padding: 0.5vh;
+  width: 30%;
+  color: black;
+  -webkit-transition: all 200ms ease;
+  transition: all 200ms ease;
+  font-size: medium;
+}
+
+.editWort input:focus {
+  border-bottom: 3px solid red;
+}
+
+.editWort .btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.editWort .btn button {
+  margin-top: 1.3vh;
+  background-color: rgba(255, 0, 0, 0.425);
+  border-radius: 10px;
+  border: 0px;
+  color: white;
+  padding: 1vh;
+  -webkit-transition: all 200ms ease-in-out;
+  transition: all 200ms ease-in-out;
+  font-size: large;
+}
+
+.editWort .btn button:hover {
+  background-color: red;
+}
+
+.editWort .wort {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+}
+
+.editWort .kategorie {
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;

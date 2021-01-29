@@ -130,12 +130,12 @@ public class DatabaseActions {
         try {
             ArrayList<Wort> woerter = new ArrayList<>();
             Statement st = conn.createStatement();
-            ResultSet rs = st.executeQuery("select frage,kategorie.kategorie,antwort\n" +
-                    "from frage\n" +
+            ResultSet rs = st.executeQuery("select wort,kategorie.kategorie \n" +
+                    "from woerter\n" +
                     "left join kategorie\n" +
-                    "on frage.kategorie = kategorie.id;");
+                    "on woerter.kategorie = kategorie.id;");
             while(rs.next()) {
-                woerter.add(new Wort(rs.getString(1),rs.getString(2)));
+                woerter.add(new Wort(rs.getString(2),rs.getString(1)));
             }
             st.close();
             rs.close();
@@ -240,5 +240,75 @@ public class DatabaseActions {
         }
         return false;
     }
+    public Wort getSpecWord(String word) {
+        try {
+            String getWord = "select wort,kategorie.kategorie \n" +
+                    "from woerter\n" +
+                    "left join kategorie\n" +
+                    "on woerter.kategorie = kategorie.id" +
+                    "where wort = \""+word+"\";";
+            Statement st = conn.createStatement();
+            ResultSet rs = st.executeQuery(getWord);
+            while(rs.next()){
+                return new Wort(rs.getString(2),rs.getString(1));
+            }
+        } catch (SQLException  throwables) {
+            throwables.printStackTrace();
+        }
+        return null;
+    }
+
     //Edit
+    public boolean editWord(String word,String kategorie){
+        try {
+            Statement st = conn.createStatement();
+            ResultSet rs = st.executeQuery("select id from kategorie where kategorie = '"+kategorie+"'");
+            int id = 0;
+            while(rs.next()) {
+                id=rs.getInt(1);
+            }
+
+            String editWord = "update  woerter set wort = ?, kategorie = ? where wort = ?";
+            PreparedStatement ps = conn.prepareStatement(editWord);
+            ps.setString(1,word);
+            ps.setInt(2,id);
+            ps.setString(3,word);
+            ps.execute();
+            ps.close();
+            return true;
+        } catch (SQLException  throwables) {
+            throwables.printStackTrace();
+        }
+        return false;
+    }
+    //Delete
+
+
+    public boolean deleteFrage(String frage) {
+        try {
+            String deleteSQL = "DELETE FROM frage WHERE frage = ?";
+            PreparedStatement ps = conn.prepareStatement(deleteSQL);
+            ps.setString(1,frage);
+            ps.execute();
+            ps.close();
+            return true;
+        } catch (SQLException  throwables) {
+            throwables.printStackTrace();
+        }
+        return false;
+    }
+
+    public boolean deleteWord(String word) {
+            try {
+                String deleteSQL = "DELETE FROM woerter WHERE wort = ?";
+                PreparedStatement ps = conn.prepareStatement(deleteSQL);
+                ps.setString(1,word);
+                ps.execute();
+                ps.close();
+                return true;
+            } catch (SQLException  throwables) {
+                throwables.printStackTrace();
+            }
+            return false;
+    }
 }

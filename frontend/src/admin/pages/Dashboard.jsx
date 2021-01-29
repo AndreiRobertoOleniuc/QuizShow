@@ -4,6 +4,7 @@ import axios from "axios";
 import AddWort from "./inputs/AddWort";
 import AddFrage from "./inputs/AddFrage";
 import AddKategorie from "./inputs/AddKategorie";
+import EditWord from "./edit/EditWord";
 
 export default function Dashboard({ userName, password }) {
     const [woerter, setWoerter] = useState([]);
@@ -29,6 +30,20 @@ export default function Dashboard({ userName, password }) {
         axios.get(`http://localhost:8080/api/public/getFragen`)
             .then((res) => {
                 setFragen(res.data);
+            })
+            .catch((err) => {
+                console.log(err);
+            })
+    }
+    const edit = (e) => {
+        setPopUp(<EditWord wort={e.target.value} setPopUp={setPopUp} refresh={refresh} />)
+    }
+    const deleteit = async (e) => {
+        axios.delete(`http://localhost:8080/api/public/deleteWord?word=${e.target.value}`)
+            .then((res) => {
+                setTimeout(() => {
+                    refresh();
+                }, [500]);
             })
             .catch((err) => {
                 console.log(err);
@@ -64,7 +79,26 @@ export default function Dashboard({ userName, password }) {
                     </div>
                     <div className="content2">
                         <div className="worterTable">
-                            
+                            <table className="woerter">
+                                <thead>
+                                    <tr>
+                                        <th align="left">Wort</th>
+                                        <th align="left">Kategorie</th>
+                                        <th align="left">Edit</th>
+                                        <th align="left">Delete</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    {woerter.map((item, id) => (
+                                        <tr key={id}>
+                                            <td>{item.wort}</td>
+                                            <td>{item.kategorie}</td>
+                                            <td><button className="edit" value={item.wort} onClick={edit}>Edit</button></td>
+                                            <td><button className="delete" value={item.wort} onClick={deleteit}>Delete</button></td>
+                                        </tr>
+                                    ))}
+                                </tbody>
+                            </table>
                         </div>
                         <div className="frageTable"></div>
                     </div>
