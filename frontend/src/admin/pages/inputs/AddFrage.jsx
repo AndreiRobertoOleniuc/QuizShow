@@ -27,7 +27,7 @@ function AddFrage({ setPopUp, refresh }) {
         setAntwort(e.target.value);
     }
     const getKategorien = async () => {
-        axios.get(`http://localhost:8080/api/public/getKategorien`)
+        axios.get(`http://andreinetwork.hopto.org//api/public/getKategorien`)
             .then((res) => {
                 setKategorien(res.data);
             })
@@ -36,7 +36,7 @@ function AddFrage({ setPopUp, refresh }) {
             })
     }
     const addFrage = async () => {
-        axios.post(`http://localhost:8080/api/public/addFrage?frage=${input}&kategorie=${kategorie}&antwort=${antwort}`)
+        axios.post(`http://andreinetwork.hopto.org//api/public/addFrage?frage=${input}&kategorie=${kategorie}&antwort=${antwort}`)
             .then((res) => {
                 if (res.data === true) {
                     setPopUp(null);

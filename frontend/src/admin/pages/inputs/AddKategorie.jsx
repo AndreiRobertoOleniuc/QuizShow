@@ -15,7 +15,7 @@ function AddKategorie({ setPopUp }) {
         setInput(e.target.value)
     }
     const addKategorie = async () => {
-        axios.post(`http://localhost:8080/api/public/addKategorie?kategorie=${input}`)
+        axios.post(`http://andreinetwork.hopto.org//api/public/addKategorie?kategorie=${input}`)
             .then((res) => {
                 if (res.data === true) {
                     setPopUp(null);

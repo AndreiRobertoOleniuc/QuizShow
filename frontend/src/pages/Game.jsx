@@ -39,7 +39,7 @@ const Game = ({ inputName, setPlayer, player, anzahlRunden, setAnzahlRunden }) =
         startGame();
     }, []);
     const startGame = async () => {
-        axios.get(`http://localhost:8080/api/public/startGame?name=${inputName}`)
+        axios.get(`http://andreinetwork.hopto.org//api/public/startGame?name=${inputName}`)
             .then((res) => {
                 setPlayer(res.data.player);
                 setWort({
@@ -68,7 +68,7 @@ const Game = ({ inputName, setPlayer, player, anzahlRunden, setAnzahlRunden }) =
         }
     }
     const newWord = async () => {
-        axios.get(`http://localhost:8080/api/public/getNewWord`)
+        axios.get(`http://andreinetwork.hopto.org//api/public/getNewWord`)
             .then((res) => {
                 setWort({
                     kategorie: res.data.kategorie,

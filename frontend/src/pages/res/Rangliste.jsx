@@ -17,7 +17,7 @@ function Rangliste() {
         getData();
     }, []);
     const getData = async () => {
-        axios.get("http://localhost:8080/api/public/getRangliste")
+        axios.get("http://andreinetwork.hopto.org//api/public/getRangliste")
             .then((res) => {
                 setRangliste(res.data);
             })
