@@ -56,6 +56,7 @@ const Inputs = ({ setInput, player, setPlayer, setGameState, setChosenChars, cho
     }
     const wordGuessed = () => {
         setGuessed(true);
+        setChosenChars([]);
     }
     return (
         <div className={`inputs ${styling ? 'show' : 'hide'}`}>

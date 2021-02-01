@@ -41,6 +41,7 @@ const App = () => {
                         <Response
                             player={player}
                             anzahlRunden={anzahlRunden}
+                            setAnzahlRunden={setAnzahlRunden}
                         />
                     </Route>
                     <PrivateRoutes exact path="/Admin">
@@ -53,10 +54,10 @@ const App = () => {
                         <Rangliste />
                     </Route>
                     <Route exact path="/Bankrott">
-                        <Bankrrot />
+                        <Bankrrot setAnzahlRunden={setAnzahlRunden} />
                     </Route>
                     <Route exact path="/GameOver">
-                        <LostMessage />
+                        <LostMessage setAnzahlRunden={setAnzahlRunden} />
                     </Route>
                     <Redirect to="/" />
                 </Switch>

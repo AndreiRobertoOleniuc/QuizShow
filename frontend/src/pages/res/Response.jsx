@@ -10,11 +10,12 @@ const AnimatedDiv = styled.div`
     animation: 1000ms ${animation};
 `;
 
-function Response({ player, anzahlRunden }) {
+function Response({ player, anzahlRunden, setAnzahlRunden }) {
     const [rangListenEintrag, setRangListenEintrag] = useState({});
     let history = useHistory();
 
     useEffect(() => {
+        setAnzahlRunden(1);
         getData();
     }, []);
     const getData = async () => {

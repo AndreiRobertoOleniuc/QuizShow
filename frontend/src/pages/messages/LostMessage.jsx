@@ -1,4 +1,4 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import styled, { keyframes } from 'styled-components';
 import { rollIn } from "react-animations";
 import { useHistory } from "react-router-dom";
@@ -9,7 +9,10 @@ const BouncyDiv = styled.div`
     animation: 1000ms ${bounceAnimation};
 `;
 
-function LostMessage() {
+function LostMessage({ setAnzahlRunden }) {
+    useEffect(() => {
+        setAnzahlRunden(1);
+    }, []);
     let history = useHistory();
     return (
         <div className="center">
