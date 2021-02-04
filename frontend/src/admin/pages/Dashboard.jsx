@@ -20,14 +20,14 @@ export default function Dashboard({ userName, password }) {
         setPopUp(<AddKategorie setPopUp={setPopUp} />);
     }
     const refresh = async () => {
-        axios.get(`http://localhost:8080/api/public/getWoerter`)
+        axios.get(`http://andreinetwork.hopto.org/api/public/getWoerter`)
             .then((res) => {
                 setWoerter(res.data);
             })
             .catch((err) => {
                 console.log(err);
             })
-        axios.get(`http://localhost:8080/api/public/getFragen`)
+        axios.get(`http://andreinetwork.hopto.org/api/public/getFragen`)
             .then((res) => {
                 setFragen(res.data);
             })
@@ -36,7 +36,7 @@ export default function Dashboard({ userName, password }) {
             })
     }
     const deleteit = async (e) => {
-        axios.delete(`http://localhost:8080/api/public/deleteWord?word=${e.target.value}`)
+        axios.delete(`http://andreinetwork.hopto.org/api/public/deleteWord?word=${e.target.value}`)
             .then((res) => {
                 setTimeout(() => {
                     refresh();
@@ -47,7 +47,7 @@ export default function Dashboard({ userName, password }) {
             })
     }
     const deleteitFrage = async (e) => {
-        axios.delete(`http://localhost:8080/api/public/deleteFrage?frage=${e.target.value}`)
+        axios.delete(`http://andreinetwork.hopto.org/api/public/deleteFrage?frage=${e.target.value}`)
             .then((res) => {
                 setTimeout(() => {
                     refresh();

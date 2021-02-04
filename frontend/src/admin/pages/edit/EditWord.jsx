@@ -15,7 +15,7 @@ function AddFrage({ setPopUp, refresh, wort }) {
         getWord();
     }, []);
     const getWord = async () => {
-        axios.get(`http://localhost:8080/api/public/getSpecWord?wort=${wort}`)
+        axios.get(`http://andreinetwork.hopto.org/api/public/getSpecWord?wort=${wort}`)
             .then((res) => {
                 setWortData(res.data);
             })

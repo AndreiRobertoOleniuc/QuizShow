@@ -31,7 +31,7 @@ function Frage({ player, setPlayer, changeState, setShowFrage, frageList, setFra
         }
     }
     const getData = async () => {
-        axios.get("http://localhost:8080/api/public/getNewFrage")
+        axios.get("http://andreinetwork.hopto.org/api/public/getNewFrage")
             .then((res) => {
                 if (frageList.includes(res.data.frage)) {
                     getData();

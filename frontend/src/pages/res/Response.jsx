@@ -19,7 +19,7 @@ function Response({ player, anzahlRunden, setAnzahlRunden }) {
         getData();
     }, []);
     const getData = async () => {
-        axios.post("http://localhost:8080/api/public/saveGame", {
+        axios.post("http://andreinetwork.hopto.org/api/public/saveGame", {
             name: player.name,
             betrag: player.betrag,
             anzahlrunden: anzahlRunden
