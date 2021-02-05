@@ -13,7 +13,7 @@ public class DatabaseActions {
     private ArrayList<Wort> woerter;
     private ArrayList<Frage> frage;
     private final ConnectionDB jdbc;
-    private final Connection conn;
+    private Connection conn;
 
     //Read
     public DatabaseActions() throws SQLException, ClassNotFoundException {
@@ -22,7 +22,7 @@ public class DatabaseActions {
         fillListWoerter();
         fillFragen();
     }
-    public void fillListWoerter(){
+    public void fillListWoerter() throws SQLException, ClassNotFoundException {
         try {
             woerter = new ArrayList<>();
             Statement st = conn.createStatement();
@@ -37,10 +37,12 @@ public class DatabaseActions {
             rs.close();
             st.close();
         } catch (SQLException throwables) {
+            conn.close();
+            conn = jdbc.createConnection();
             throwables.printStackTrace();
         }
     }
-    public void fillFragen(){
+    public void fillFragen() throws SQLException, ClassNotFoundException{
         try {
             frage = new ArrayList<>();
             Statement st = conn.createStatement();
@@ -55,6 +57,8 @@ public class DatabaseActions {
             rs.close();
             st.close();
         } catch (SQLException throwables) {
+            conn.close();
+            conn = jdbc.createConnection();
             throwables.printStackTrace();
         }
     }
@@ -67,7 +71,7 @@ public class DatabaseActions {
         return frage.get(r.nextInt(frage.size()));
     }
 
-    public ArrayList<RanglistOutput> getRangListe() {
+    public ArrayList<RanglistOutput> getRangListe() throws SQLException, ClassNotFoundException{
         try {
             ArrayList<RanglistOutput> rangList = new ArrayList<>();
             Statement st = conn.createStatement();
@@ -86,11 +90,13 @@ public class DatabaseActions {
             rs.close();
             return rangList;
         } catch (SQLException  throwables) {
+            conn.close();
+            conn = jdbc.createConnection();
             throwables.printStackTrace();
         }
         return null;
     }
-    public ArrayList<String> getKategorien(){
+    public ArrayList<String> getKategorien() throws SQLException, ClassNotFoundException{
         try {
             ArrayList<String> kategorien = new ArrayList<>();
             Statement st = conn.createStatement();
@@ -103,11 +109,13 @@ public class DatabaseActions {
             rs.close();
             return kategorien;
         } catch (SQLException  throwables) {
+            conn.close();
+            conn = jdbc.createConnection();
             throwables.printStackTrace();
         }
         return null;
     }
-    public ArrayList<Frage> getFragen(){
+    public ArrayList<Frage> getFragen() throws SQLException, ClassNotFoundException{
         try {
             ArrayList<Frage> fragen = new ArrayList<>();
             Statement st = conn.createStatement();
@@ -122,11 +130,13 @@ public class DatabaseActions {
             rs.close();
             return fragen;
         } catch (SQLException  throwables) {
+            conn.close();
+            conn = jdbc.createConnection();
             throwables.printStackTrace();
         }
         return null;
     }
-    public ArrayList<Wort> getWoerter(){
+    public ArrayList<Wort> getWoerter() throws SQLException, ClassNotFoundException{
         try {
             ArrayList<Wort> woerter = new ArrayList<>();
             Statement st = conn.createStatement();
@@ -141,12 +151,14 @@ public class DatabaseActions {
             rs.close();
             return woerter;
         } catch (SQLException  throwables) {
+            conn.close();
+            conn = jdbc.createConnection();
             throwables.printStackTrace();
         }
         return null;
     }
     //Write
-    public RanglistOutput saveGameandGetGame(RanglistInputs  input) {
+    public RanglistOutput saveGameandGetGame(RanglistInputs  input) throws SQLException, ClassNotFoundException{
         try {
             String queryCreateUser = "Insert into rangliste (name,geldbetrag,anzahlrunden) values (?,?,?);";
             PreparedStatement ps = conn.prepareStatement(queryCreateUser);
@@ -180,11 +192,13 @@ public class DatabaseActions {
             st.close();
             rs.close();
         } catch (SQLException  throwables) {
+            conn.close();
+            conn = jdbc.createConnection();
             throwables.printStackTrace();
         }
         return null;
     }
-    public boolean newKategorie(String kategorie){
+    public boolean newKategorie(String kategorie) throws SQLException, ClassNotFoundException{
         try {
             String queryCreateUser = "Insert into kategorie (kategorie) values (?);";
             PreparedStatement ps = conn.prepareStatement(queryCreateUser);
@@ -197,7 +211,7 @@ public class DatabaseActions {
         }
         return false;
     }
-    public boolean newWort(String wort,String kategorie){
+    public boolean newWort(String wort,String kategorie) throws SQLException, ClassNotFoundException{
         try {
             Statement st = conn.createStatement();
             ResultSet rs = st.executeQuery("select id from kategorie where kategorie = '"+kategorie+"'");
@@ -214,11 +228,13 @@ public class DatabaseActions {
             ps.close();
             return true;
         } catch (SQLException  throwables) {
+            conn.close();
+            conn = jdbc.createConnection();
             throwables.printStackTrace();
         }
         return false;
     }
-    public boolean newFrage(String frage,String kategorie,boolean antwort){
+    public boolean newFrage(String frage,String kategorie,boolean antwort) throws SQLException, ClassNotFoundException{
         try {
             Statement st = conn.createStatement();
             ResultSet rs = st.executeQuery("select id from kategorie where kategorie = '"+kategorie+"'");
@@ -236,11 +252,13 @@ public class DatabaseActions {
             ps.close();
             return true;
         } catch (SQLException  throwables) {
+            conn.close();
+            conn = jdbc.createConnection();
             throwables.printStackTrace();
         }
         return false;
     }
-    public Wort getSpecWord(String word) {
+    public Wort getSpecWord(String word) throws SQLException, ClassNotFoundException{
         try {
             String getWord = "select wort,kategorie.kategorie \n" +
                     "from woerter\n" +
@@ -253,13 +271,15 @@ public class DatabaseActions {
                 return new Wort(rs.getString(2),rs.getString(1));
             }
         } catch (SQLException  throwables) {
+            conn.close();
+            conn = jdbc.createConnection();
             throwables.printStackTrace();
         }
         return null;
     }
 
     //Edit
-    public boolean editWord(String word,String kategorie){
+    public boolean editWord(String word,String kategorie) throws SQLException, ClassNotFoundException{
         try {
             Statement st = conn.createStatement();
             ResultSet rs = st.executeQuery("select id from kategorie where kategorie = '"+kategorie+"'");
@@ -277,6 +297,8 @@ public class DatabaseActions {
             ps.close();
             return true;
         } catch (SQLException  throwables) {
+            conn.close();
+            conn = jdbc.createConnection();
             throwables.printStackTrace();
         }
         return false;
@@ -284,7 +306,7 @@ public class DatabaseActions {
     //Delete
 
 
-    public boolean deleteFrage(String frage) {
+    public boolean deleteFrage(String frage) throws SQLException, ClassNotFoundException{
         try {
             String deleteSQL = "DELETE FROM frage WHERE frage = ?";
             PreparedStatement ps = conn.prepareStatement(deleteSQL);
@@ -293,12 +315,14 @@ public class DatabaseActions {
             ps.close();
             return true;
         } catch (SQLException  throwables) {
+            conn.close();
+            conn = jdbc.createConnection();
             throwables.printStackTrace();
         }
         return false;
     }
 
-    public boolean deleteWord(String word) {
+    public boolean deleteWord(String word) throws SQLException, ClassNotFoundException{
             try {
                 String deleteSQL = "DELETE FROM woerter WHERE wort = ?";
                 PreparedStatement ps = conn.prepareStatement(deleteSQL);
@@ -307,6 +331,8 @@ public class DatabaseActions {
                 ps.close();
                 return true;
             } catch (SQLException  throwables) {
+                conn.close();
+                conn = jdbc.createConnection();
                 throwables.printStackTrace();
             }
             return false;
